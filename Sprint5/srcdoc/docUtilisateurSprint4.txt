@@ -1,0 +1,196 @@
+= Documentation SPRINT 4
+:Author:  Groupe projet 2A1 Module MPA S3
+:doctitle: Documentation Utilisateur OPTI Sprint 4
+:slideshowlocation: Your computer
+:copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by AsciiDoc and W3C Slidy &#169; 
+:revnumber: 5
+
+include::docConf.txt[]
+
+== Liste des membres
+
+- Baverez Tristan
+- Trille Jean-Sebastien
+- Pinquier Victor 
+- Larrouy Etienne
+- Rivalier Antoine
+
+== BackLog produit Sprint 4
+
+
+En tant qu’internaute, je veux accéder à l’application OPTIweb.html depuis tout support fixe ou mobile
+
+En tant qu’internaute, je veux pouvoir consulter les projets, les sujets, les étudiants et les intervenants dans des pages séparées
+
+
+- Page Projets
+
+En tant qu’internaute, je veux pour chaque projet en voir le nom, le titre, le client, le superviseur, le groupe et les étudiants réalisant le projet
+
+En tant qu’internaute, je veux pouvoir rechercher un projet dans la liste des projets en fournissant une chaine de caractère quelconque
+
+
+- Page Sujets
+
+En tant qu’internaute, je veux pour chaque sujet en voir le nom, le titre et le ou les noms des groupes d'étudiants réalisant le sujet
+
+En tant qu’internaute, je veux pouvoir rechercher un sujet dans la liste des sujets en fournissant une chaine de caractère quelconque
+
+En tant qu’internaute, je veux pouvoir sélectionner un sujet et voir les projets réalisant le sujet
+
+
+- Page Etudiants
+
+En tant qu’internaute, je veux pour chaque étudiant en voir le nom, le prénom ainsi que son groupe
+
+En tant qu’internaute, je veux pouvoir rechercher un étudiant dans la liste des étudiants en fournissant une chaine de caractère quelconque
+
+En tant qu’internaute, je veux pouvoir sélectionner un étudiant et voir le projet qu’il réalise
+
+
+- Page Intervenants
+
+En tant qu’internaute, je veux pour chaque intervenant en voir le nom, le prénom ainsi que le nombre de ses interventions en tant que Client ou Superviseur
+
+En tant qu’internaute, je veux pouvoir rechercher un intervenant dans la liste des intervenants en fournissant une chaine de caractère quelconque
+
+En tant qu’internaute, je veux pouvoir sélectionner un intervenant et voir le(s) projet(s) où il intervient
+
+== Utiliser l'application
+
+*Comment démarrer l'application :*
+
+
+. Compile, exécuter les test et créer la documentation
+- Aller dans le répertoire  du projet
+- Executer le fichier "make.bat"
+- L'application web va se créer
+- L'interface graphique a se lancer
+
+
+== Fonctionnalités de l'application
+
+*Fichier permettant de sauvegarder en .csv*
+
+- Le fichier IOTool.java permet à l'application de lire ainsi que de sauvegarder des fichiers au format .csv
+- les fichiers : Groupe.java , Individu.java , Sujet.java sont des fichiers qui contiennent la base de donnée
+ 
+*Interface graphique*
+
+- Changement de la page d'acceuil de l'interface pour un meilleur visuel
+image::Acceuil.png[]
+
+- Actuellement l'interface possède un onglet Aide dans lequel se trouve toutes les informations relatives à la création de l'application.
+
+image::aide.png[]
+
+.Afficher 
+
+- Aller sur l'onglet affichage et choisissez ce que vous voulez afficher (Etudiant, Intervenant, Sujet, Projet).
+
+image::afficher.png[]
+
+- Affichage des groupes
+
+image::affGroupe.png[]
+
+[NOTE]
+====
+Cliquer sur le Groupe que vous souhaiter afficher.
+L'application vous affichera les étudiants du groupe ainqi que leur Intervenant.  
+====
+
+[WARNING]
+====
+Il est possible que le Groupe ne soit pas affecté à un projet
+====
+
+- Affichage des Intervenants
+
+image::affIntervenant.png[]
+
+[WARNING]
+====
+Il est possible qu'un intervenant ne soit pas affecté à un projet
+====
+
+.Supprimer
+
+- Sélectionner un ou des items dans la liste et cliquer sur le bouton suppprimer pour supprimer l'item
+
+image::suppression.png[]
+
+.Sauvegarder
+- Appuyer sur le bouton sauvegarder
+- Entrer le nom de fichier souhaité
+
+image::sauvegarde.png[]
+
+[WARNING]
+====
+N'entrer pas l'extension du fichier, indiquer uniquement le nom
+====
+
+
+.Associer un intervenant a un projet
+- Afficher les intervenants
+- Selectionner un intervenant
+- Appuyer sur le bouton "assigner projet"
+- Une nouvelle fenêtre s'affiche
+- Choissiser un projet
+- Choissiser un rôle
+
+image::asso.png[]
+
+*Version Web*
+
+La version web de l'application est générée grâce au make.bat.
+Une fois générée, le site web va vous permettre de :
+
+- Afficher toutes les informations des projets (Etudiants, Sujets, Intervenant, Groupe)
+- Rechercher des données grâce en fournissant une chaine de caractère
+- Lier les données entre elles.
+
+link:../OPTIweb/test/OPTIweb.html[OPTI Web]
+
+
+
+== Documentation Java
+  
+link:../doc/index.html[Java DOC]
+
+
+// syntaxe d'utilisation 
+ 
+ 
+// Pour le texte : *gras*, _italique_, +code+.
+ 
+
+// === Exemple de sous-section
+
+//.Une image et sa légende
+//image::sieste.png[link="sieste.png",width="70%"]
+
+//== Code source et diagrammes UML
+
+//Voici une façon simple d'intégrer un link:{src}HelloMonde.java[code source] :
+
+
+//----
+//public class HelloMonde {
+//
+//        /**
+//         * @param args
+//         */
+//        public static void main(String[] args) {
+//             System.out.println("[DUT/INFO/S3]");
+//             System.out.println("Hello Monde !");
+//             System.out.println("depuis Blagnac.");
+//        }
+
+//}
+//----
+
+//ou du code {plantUML} (source link:{srcdoc}diag0.puml[ici]) :
+
+//image::diag0.png[]
