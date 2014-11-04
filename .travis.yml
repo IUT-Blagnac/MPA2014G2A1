@@ -1,4 +1,4 @@
-language: java
+﻿language: java
 
 before_install:
   - wget http://algec.iut-blagnac.fr/~jmi/MPA/src/junit.jar
@@ -27,19 +27,19 @@ script:
   - set SRCDIR=./src
   - set BINDIR=./bin
 
-  - echo "///////////////////////////////////////////////////////"
-  - echo "// COMPILATION de la librairie"
-  - echo "///////////////////////////////////////////////////////"
 
-  - javac -cp .;%BINDIR% -d %BINDIR% %SRCDIR%/donnees/*.java
-  - javac -cp .;%BINDIR%;./tools/junit.jar -d %BINDIR% %SRCDIR%/Tests/*.java
+  - echo "COMPILATION de la librairie"
 
-  - echo "///////////////////////////////////////////////////////"
-  - echo "// Exécution des Tests"
-  - echo "///////////////////////////////////////////////////////"
+
+  - javac -cp .;./bin -d ./bin ./src/donnees/*.java
+  - javac -cp .;./bin;./tools/junit.jar -d ./bin ./src/Tests/*.java
+
+  
+  - echo "Exécution des Tests"
+
 
   - if "%RUNTEST%"=="1" (
-  - cd %BINDIR%
+  - cd ./bin
   - java -cp .;../bin;../tools/junit.jar junit.textui.TestRunner Tests.EtudiantTest
   - java -cp .;../bin;../tools/junit.jar junit.textui.TestRunner Tests.IntervenantTest
   - java -cp .;../bin;../tools/junit.jar junit.textui.TestRunner Tests.GroupeTest
@@ -47,39 +47,39 @@ script:
   -  java -cp .;../bin;../tools/junit.jar junit.textui.TestRunner Tests.ParticipationTest
   - java -cp .;../bin;../tools/junit.jar junit.textui.TestRunner Tests.SujetTest
  
-  - cd %SPRINTDIR%
+  - cd sprint_5
   - java -cp .;./bin;./data;./tools/junit.jar junit.textui.TestRunner Tests.IOToolTest
 
   - )
 
-  - echo "///////////////////////////////////////////////////////"
-  - echo "// COMPILATION de l'application WEB"
-  - echo "///////////////////////////////////////////////////////"
 
-  - javac -cp .;%BINDIR% -d %BINDIR% %SRCDIR%/web/MakeOPTIweb.java
+  - echo "COMPILATION de l'application WEB"
 
 
-  - echo "///////////////////////////////////////////////////////"
-  - echo "// Création de la page WEB"
-  - echo "///////////////////////////////////////////////////////"
+  - javac -cp .;./bin -d ./bin ./src/web/MakeOPTIweb.java
+
+
+
+  - echo "Création de la page WEB"
+
 
   - java -cp  .;./bin;./data; web.MakeOPTIweb
 
 
 
-  - echo "///////////////////////////////////////////////////////"
-  - echo "// COMPILATION de l'IHM"
-  - echo "///////////////////////////////////////////////////////"
 
-  - javac -cp .;%BINDIR% -d %BINDIR% %SRCDIR%/interfacv1/Intervenant.java
-  - javac -cp .;%BINDIR% -d %BINDIR% %SRCDIR%/interfacv1/AssProjet.java
-  - javac -cp .;%BINDIR% -d %BINDIR% %SRCDIR%/interfacv1/SaisieVoeux.java
-  - javac -cp .;%BINDIR% -d %BINDIR% %SRCDIR%/interfacv1/Etudiant.java
-  - javac -cp .;%BINDIR% -d %BINDIR% %SRCDIR%/interfacv1/Projet.java
-  - javac -cp .;%BINDIR% -d %BINDIR% %SRCDIR%/interfacv1/Groupe.java
-  - javac -cp .;%BINDIR% -d %BINDIR% %SRCDIR%/interfacv1/Sujet.java
-  - javac -cp .;%BINDIR% -d %BINDIR% %SRCDIR%/interfacv1/APropos.java
-  - javac -cp .;%BINDIR% -d %BINDIR% %SRCDIR%/interfacv1/InterfaceLog.java
+  - echo "COMPILATION de l'IHM"
+
+
+  - javac -cp .;./bin -d ./bin ./src/interfacv1/Intervenant.java
+  - javac -cp .;./bin -d ./bin ./src/interfacv1/AssProjet.java
+  - javac -cp .;./bin -d ./bin ./src/interfacv1/SaisieVoeux.java
+  - javac -cp .;./bin -d ./bin ./src/interfacv1/Etudiant.java
+  - javac -cp .;./bin -d ./bin ./src/interfacv1/Projet.java
+  - javac -cp .;./bin -d ./bin ./src/interfacv1/Groupe.java
+  - javac -cp .;./bin -d ./bin ./src/interfacv1/Sujet.java
+  - javac -cp .;./bin -d ./bin ./src/interfacv1/APropos.java
+  - javac -cp .;./bin -d ./bin ./src/interfacv1/InterfaceLog.java
 
 
 
@@ -87,9 +87,9 @@ script:
   - echo "// EXECUTION de l'IHM"
   - echo "///////////////////////////////////////////////////////"
 
-  - java -cp  .;./bin;./data; %SRCDIR%/interfacv1/InterfaceLog
-  - javac -cp .:./bin -d ./bin %SRCDIR%/HelloMonde.java
-  - javac -cp .:./bin:../junit.jar -d ./bin %SRCDIR%/HelloMondeTest.java
+  - java -cp  .;./bin;./data; ./src/interfacv1/InterfaceLog
+  - javac -cp .:./bin -d ./bin ./src/HelloMonde.java
+  - javac -cp .:./bin:../junit.jar -d ./bin ./src/HelloMondeTest.java
   - java -jar ../plantuml.jar -Tpng -o srcdoc/images srcdoc/diag0.puml
   - python ../asciidoc-8.6.7/asciidoc.py -a data-uri -o srcdoc/presentationFinale.html srcdoc/presentationFinale.txt
   - ls -alF srcdoc
