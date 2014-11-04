@@ -1,0 +1,39 @@
+'-----------------------------------
+' UML concepts illustrated
+' JMB 2014
+'-----------------------------------
+@startuml
+'-----------------------------------
+
+class ETUDIANTS {
+        nomEtu
+        prenomEtu
+        numEtu
+}
+
+class INTERVENANTS {
+        nomInt
+        prenomInt
+        numInt
+}
+
+class GROUPES {
+        numGr
+}
+
+class SUJETS {
+        idSujet
+        nomSuj
+        titreSuj
+}
+
+ETUDIANTS -- GROUPES 
+INTERVENANTS -- GROUPES 
+
+GROUPES --  SUJETS
+(GROUPES, SUJETS) .. PROJET
+
+
+'-----------------------------------
+@enduml
+'-----------------------------------
