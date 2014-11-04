@@ -22,11 +22,10 @@ script:
   - casperjs --version
   - echo Hello from DUT INFO Blagnac
   - ls -alF
-  - set RUNTEST=1
-  - set SPRINTDIR=sprint_5
-  - set SRCDIR=./src
-  - set BINDIR=./bin
 
+
+
+  - cd sprint_5
 
   - echo "COMPILATION de la librairie"
 
@@ -38,7 +37,6 @@ script:
   - echo "Exécution des Tests"
 
 
-  - if "%RUNTEST%"=="1" (
   - cd ./bin
   - java -cp .;../bin;../tools/junit.jar junit.textui.TestRunner Tests.EtudiantTest
   - java -cp .;../bin;../tools/junit.jar junit.textui.TestRunner Tests.IntervenantTest
@@ -50,7 +48,6 @@ script:
   - cd sprint_5
   - java -cp .;./bin;./data;./tools/junit.jar junit.textui.TestRunner Tests.IOToolTest
 
-  - )
 
 
   - echo "COMPILATION de l'application WEB"
