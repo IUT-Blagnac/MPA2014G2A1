@@ -7,7 +7,7 @@ public class Accueil {
 	public static String creationAccueil(){
 
 
-		//Ecriture jusqu'à <body>
+		//Ecriture jusqu'Ã  <body>
 		String grandeString = "";
 
 		String partie1 = "<!DOCTYPE html>\n"+
@@ -31,8 +31,8 @@ public class Accueil {
 		String partie2="<!-- DEBUT page accueil -->\n"+
 				"<div data-role=\"page\" id=\"accueil\" data-title=\"OPTIweb - V0.1\" data-url=\"accueil\" tabindex=\"0\" class=\"ui-page ui-page-theme-a ui-page-active\" style=\"min-height: 654px;\">\n"+
 				"<div data-role=\"header\" data-add-back-btn=\"false\" role=\"banner\" class=\"ui-header ui-bar-inherit\" >\n"+
-				"<h1 class=\"ui-title\" role=\"heading\" aria-level=\"1\">P<span class=\"landscape\">rojets </span>tut<span class=\"landscape\">orés</span> 2014-2015<br/>Département INFO<span class=\"landscape\">RMATIQUE</span><br/>IUT de Blagnac</h1>\n"+
-				"<a href=\"#credits\" data-theme=\"b\" class=\"ui-btn-right\">Crédits</a>\n"+
+				"<h1 class=\"ui-title\" role=\"heading\" aria-level=\"1\">P<span class=\"landscape\">rojets </span>tut<span class=\"landscape\">orÃ©s</span> 2014-2015<br/>DÃ©partement INFO<span class=\"landscape\">RMATIQUE</span><br/>IUT de Blagnac</h1>\n"+
+				"<a href=\"#credits\" data-theme=\"b\" class=\"ui-btn-right\">CrÃ©dits</a>\n"+
 				"</div>\n"+
 				"<div data-role=\"content\">\n"+
 				"<ul data-role=\"listview\" data-inset=\"true\" id=\"listeSources\">\n"+
@@ -49,24 +49,24 @@ public class Accueil {
 				"<!-- FIN page accueil -->\n";
 
 		String partie3="<!-- DEBUT page credits -->\n"+
-				"<div data-role=\"page\" id=\"credits\" data-title=\"OPTIweb - V0.1 - Crédits\" data-url=\"credits\" tabindex=\"0\" class=\"ui-page ui-page-theme-a\" style=\"min-height: 626px;\">\n"+
+				"<div data-role=\"page\" id=\"credits\" data-title=\"OPTIweb - V0.1 - CrÃ©dits\" data-url=\"credits\" tabindex=\"0\" class=\"ui-page ui-page-theme-a\" style=\"min-height: 626px;\">\n"+
 				"<div data-role=\"header\" data-add-back-btn=\"true\" role=\"banner\" class=\"ui-header ui-bar-inherit\"><a role=\"button\" href=\"javascript:void(0);\" class=\"ui-btn ui-corner-all ui-shadow ui-btn-left ui-toolbar-back-btn ui-icon-carat-l ui-btn-icon-left\" data-rel=\"back\">Back</a>\n"+
-				"<h1 class=\"ui-title\" role=\"heading\" aria-level=\"1\">Crédits</h1>\n"+
+				"<h1 class=\"ui-title\" role=\"heading\" aria-level=\"1\">CrÃ©dits</h1>\n"+
 				"</div>\n"+
 				"<div data-role=\"content\" class=\"ui-content\" role=\"main\">\n"+
-				"    <p>Cette application a été réalisée dans le cadre du module M3301/MPA du DUT Informatique à l'IUT de Blagnac.</p>\n"+
+				"    <p>Cette application a Ã©tÃ© rÃ©alisÃ©e dans le cadre du module M3301/MPA du DUT Informatique Ã  l'IUT de Blagnac.</p>\n"+
 				"<ul data-role=\"listview\" data-inset=\"true\" id=\"contacts\" data-theme=\"a\" data-divider-theme=\"b\" class=\"ui-listview ui-listview-inset ui-corner-all ui-shadow ui-group-theme-a\">\n"+
 				"    <li data-role=\"list-divider\" role=\"heading\" class=\"ui-li-divider ui-bar-b ui-first-child\">Product Owner</li>\n"+
-				"    <li class=\"ui-li-static ui-body-inherit\">André PÉNINOU</li>\n"+
-				"    <li class=\"ui-li-static ui-body-inherit ui-last-child\">Université Toulouse 2 - IUT de Blagnac\n"+
-				"    <br>Département INFORMATIQUE</li>\n"+
+				"    <li class=\"ui-li-static ui-body-inherit\">AndrÃ© PÃ‰NINOU</li>\n"+
+				"    <li class=\"ui-li-static ui-body-inherit ui-last-child\">UniversitÃ© Toulouse 2 - IUT de Blagnac\n"+
+				"    <br>DÃ©partement INFORMATIQUE</li>\n"+
 				"</ul>\n"+
 				"<ul data-role=\"listview\" data-inset=\"true\" id=\"listecredits\" data-theme=\"a\" data-divider-theme=\"b\" class=\"ui-listview ui-listview-inset ui-corner-all ui-shadow ui-group-theme-a\">\n"+
-				"    <li data-role=\"list-divider\" role=\"heading\" class=\"ui-li-divider ui-bar-b ui-first-child\">Membres de l'équipe enseignante</li>\n"+
-				"<li class=\"ui-li-static ui-body-inherit\">Jean-Michel BRUEL</li><li class=\"ui-li-static ui-body-inherit\">Jean-Michel INGLEBERT</li><li class=\"ui-li-static ui-body-inherit\">André PÉNINOU</li><li class=\"ui-li-static ui-body-inherit ui-last-child\">Olivier ROQUES</li>\n"+
+				"    <li data-role=\"list-divider\" role=\"heading\" class=\"ui-li-divider ui-bar-b ui-first-child\">Membres de l'Ã©quipe enseignante</li>\n"+
+				"<li class=\"ui-li-static ui-body-inherit\">Jean-Michel BRUEL</li><li class=\"ui-li-static ui-body-inherit\">Jean-Michel INGLEBERT</li><li class=\"ui-li-static ui-body-inherit\">AndrÃ© PÃ‰NINOU</li><li class=\"ui-li-static ui-body-inherit ui-last-child\">Olivier ROQUES</li>\n"+
 				"</ul>\n"+
 				"<ul data-role=\"listview\" data-inset=\"true\" id=\"listepowered\" data-theme=\"a\" data-divider-theme=\"b\" class=\"ui-listview ui-listview-inset ui-corner-all ui-shadow ui-group-theme-a\">\n"+
-				"    <li data-role=\"list-divider\" role=\"heading\" class=\"ui-li-divider ui-bar-b ui-first-child\">Propulsé par</li>\n"+
+				"    <li data-role=\"list-divider\" role=\"heading\" class=\"ui-li-divider ui-bar-b ui-first-child\">PropulsÃ© par</li>\n"+
 				"    <li><a href=\"http://jquerymobile.com/\" target=\"autrePage\" class=\"ui-btn ui-btn-icon-right ui-icon-carat-r\">http://jquerymobile.com/</a></li>\n"+
 				"    <li class=\"ui-last-child\"><a href=\"http://fortawesome.github.io/Font-Awesome/\" target=\"autrePage\" class=\"ui-btn ui-btn-icon-right ui-icon-carat-r\">http://fortawesome.github.io/Font-Awesome/</a></li>\n"+
 				"</ul>\n"+
