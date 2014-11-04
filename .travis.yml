@@ -22,22 +22,21 @@ script:
   - casperjs --version
   - echo Hello from DUT INFO Blagnac
   - ls -alF
-  - cd sprint_5
   - set RUNTEST=1
   - set SPRINTDIR=sprint_5
   - set SRCDIR=./src
   - set BINDIR=./bin
 
-  - echo ///////////////////////////////////////////////////////
-  - echo // COMPILATION de la librairie
-  - echo ///////////////////////////////////////////////////////
+  - echo "///////////////////////////////////////////////////////"
+  - echo "// COMPILATION de la librairie"
+  - echo "///////////////////////////////////////////////////////"
 
   - javac -cp .;%BINDIR% -d %BINDIR% %SRCDIR%/donnees/*.java
   - javac -cp .;%BINDIR%;./tools/junit.jar -d %BINDIR% %SRCDIR%/Tests/*.java
 
-  - echo ///////////////////////////////////////////////////////
-  - echo // Exécution des Tests
-  - echo ///////////////////////////////////////////////////////
+  - echo "///////////////////////////////////////////////////////"
+  - echo "// Exécution des Tests"
+  - echo "///////////////////////////////////////////////////////"
 
   - if "%RUNTEST%"=="1" (
   - cd %BINDIR%
@@ -53,24 +52,24 @@ script:
 
   - )
 
-  - echo ///////////////////////////////////////////////////////
-  - echo // COMPILATION de l'application WEB
-  - echo ///////////////////////////////////////////////////////
+  - echo "///////////////////////////////////////////////////////"
+  - echo "// COMPILATION de l'application WEB"
+  - echo "///////////////////////////////////////////////////////"
 
   - javac -cp .;%BINDIR% -d %BINDIR% %SRCDIR%/web/MakeOPTIweb.java
 
 
-  - echo ///////////////////////////////////////////////////////
-  - echo // Création de la page WEB
-  - echo ///////////////////////////////////////////////////////
+  - echo "///////////////////////////////////////////////////////"
+  - echo "// Création de la page WEB"
+  - echo "///////////////////////////////////////////////////////"
 
   - java -cp  .;./bin;./data; web.MakeOPTIweb
 
 
 
-  - echo ///////////////////////////////////////////////////////
-  - echo // COMPILATION de l'IHM
-  - echo ///////////////////////////////////////////////////////
+  - echo "///////////////////////////////////////////////////////"
+  - echo "// COMPILATION de l'IHM"
+  - echo "///////////////////////////////////////////////////////"
 
   - javac -cp .;%BINDIR% -d %BINDIR% %SRCDIR%/interfacv1/Intervenant.java
   - javac -cp .;%BINDIR% -d %BINDIR% %SRCDIR%/interfacv1/AssProjet.java
@@ -84,13 +83,13 @@ script:
 
 
 
-  - echo ///////////////////////////////////////////////////////
-  - echo // EXECUTION de l'IHM
-  - echo ///////////////////////////////////////////////////////
+  - echo "///////////////////////////////////////////////////////"
+  - echo "// EXECUTION de l'IHM"
+  - echo "///////////////////////////////////////////////////////"
 
-  - java -cp  .;./bin;./data; interfacv1/InterfaceLog
-  - javac -cp .:./bin -d ./bin ./src/HelloMonde.java
-  - javac -cp .:./bin:../junit.jar -d ./bin ./src/HelloMondeTest.java
+  - java -cp  .;./bin;./data; %SRCDIR%/interfacv1/InterfaceLog
+  - javac -cp .:./bin -d ./bin %SRCDIR%/HelloMonde.java
+  - javac -cp .:./bin:../junit.jar -d ./bin %SRCDIR%/HelloMondeTest.java
   - java -jar ../plantuml.jar -Tpng -o srcdoc/images srcdoc/diag0.puml
   - python ../asciidoc-8.6.7/asciidoc.py -a data-uri -o srcdoc/presentationFinale.html srcdoc/presentationFinale.txt
   - ls -alF srcdoc
