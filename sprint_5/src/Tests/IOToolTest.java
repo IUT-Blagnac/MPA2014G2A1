@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class IOToolTest extends TestCase {
 	
-	//Déclaration des variables
+	//DÃ©claration des variables
 	ArrayList<String> Toast = new ArrayList<String>();
 	String path;
 	
