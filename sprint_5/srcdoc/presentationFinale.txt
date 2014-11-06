@@ -315,12 +315,12 @@ Nous avons effectuer 180 H de travail, au prix du smic horaire, soit : 1715,4 �
 - Lors de ce projets, nous avons eu un certain nombre de problèmes, notamment lors de chaque reprise du projet car nous changions souvent de poste et nous
 devions donc repasser derrière le code d'une autre personne ce qui n'est pas toujours évident.
 - Ensuite nous aurions dû mieux réfléchir à la conception de la base de donnée, car lors des refactoring nous ne pouvions parfois plus travailler.
-- En ce qui concerne les relations de groupe, il y avait une bonne ambiance et une volonté de travailler.
+- En ce qui concerne les relations de groupe, il y avait une bonne ambiance et une volontée de travailler.
 
 == Liste des membres
 
 - Baverez Tristan
-- Trille Jean-Sebastien
-- Pinquier Victor 
 - Larrouy Etienne
+- Pinquier Victor 
 - Rivalier Antoine
+- Trille Jean-Sebastien
