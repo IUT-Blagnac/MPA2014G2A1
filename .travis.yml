@@ -78,7 +78,7 @@ script:
  
   - cd ..
   
-  - java -cp .:./bin;./data;./tools/junit.jar junit.textui.TestRunner Tests.IOToolTest
+  - java -cp .:./bin:./data:./tools/junit.jar junit.textui.TestRunner Tests.IOToolTest
 
 
 
