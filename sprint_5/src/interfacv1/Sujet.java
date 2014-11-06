@@ -181,7 +181,7 @@ public class Sujet extends JDialog{
 		
 		ArrayList<String> tabNomArg = new ArrayList<String>();
 		switch(pTitre){
-			case "Liste Etudiants" : tabNomArg.add("nom"); tabNomArg.add("pr�nom"); tabNomArg.add("num�ro �tudiant");
+			case "Liste Etudiants" : tabNomArg.add("nom"); tabNomArg.add("prénom"); tabNomArg.add("num�ro �tudiant");
 			break;
 			case "Liste Sujets" : tabNomArg.add("nom du sujet"); tabNomArg.add("description"); tabNomArg.add("langages");
 			break;
