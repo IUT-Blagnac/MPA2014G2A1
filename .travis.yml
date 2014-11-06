@@ -45,12 +45,12 @@ script:
   - javac -cp .:./bin -d ./bin ./src/HelloMonde.java
   - javac -cp .:./bin:../junit.jar -d ./bin ./src/HelloMondeTest.java
 
-
+ 
   - echo "COMPILATION de la librairie"
 
   
   - javac -cp .:./bin -d /bin .src/donnees/*.java
-  - javac -cp .:./bin:../junit.jar -d ./bin .src/Tests/*.java
+  - javac -cp .:./bin:../junit.jar -d ./bin ./src/Tests/*.java
   
   
 
