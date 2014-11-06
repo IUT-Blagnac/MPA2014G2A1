@@ -49,7 +49,7 @@ script:
   - echo "COMPILATION de la librairie"
 
   
-  - javac -cp .:./bin -d /bin .src/donnees/*.java
+  - javac -cp .:./bin -d ./bin ./src/donnees/*.java
   - javac -cp .:./bin:../junit.jar -d ./bin ./src/Tests/*.java
   
   
