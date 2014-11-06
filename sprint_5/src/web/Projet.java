@@ -38,12 +38,12 @@ public class Projet {
 
 					//On regarde les roles de chaque intervenant
 					if(donnees.Participation.getListeParticipation().get(j).getRole() == 0){
-						//On récupère le nom et le prénom du client
+						//On rÃ©cupÃ©re le nom et le prÃ©nom du client
 						client = donnees.Participation.getListeParticipation().get(j).getIntervenant().getPrenom() +" "+donnees.Participation.getListeParticipation().get(j).getIntervenant().getNom();
 					}
 
 					if(donnees.Participation.getListeParticipation().get(j).getRole() == 1){
-						//On récupère le nom et le prénom du Superviseur
+						//On rÃ©cupÃ©re le nom et le prÃ©nom du Superviseur
 						superviseur = donnees.Participation.getListeParticipation().get(j).getIntervenant().getPrenom() +" "+ donnees.Participation.getListeParticipation().get(j).getIntervenant().getNom();
 					}
 				}
@@ -52,7 +52,7 @@ public class Projet {
 
 			donnees.Projet leProjet = donnees.Projet.getListeProjet().get(i);
 
-			//récupération des étudiants
+			//rÃ©cupÃ©ration des Ã©tudiants
 			for(int j = 0; j < leProjet.getGroupe().getMembres().size(); j++){
 				if(leProjet.getGroupe().getMembres().get(j)!=null){
 					etudiants = etudiants + 
