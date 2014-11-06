@@ -1,0 +1,326 @@
+﻿= Présentation finale de recette
+:Author:  Groupe projet 2A1 Module MPA S3
+:doctitle: Présentation finale de recette OPTI 
+:slideshowlocation: Your computer
+:copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by AsciiDoc and W3C Slidy &#169; 
+:revnumber: 5
+:incremental:
+
+include::docConf.txt[]
+
+== Bilan fonctionnel
+
+*Comment démarrer l'application :*
+
+
+. Compiler, exécuter les test et créer la documentation
+- Aller dans le répertoire  du projet
+- Executer le fichier "make.bat"
+- L'application web va se créer
+- L'interface graphique va se lancer
+
+*Fonctionnalités de l'application*
+
+[NOTE]
+====
+Fichier permettant de sauvegarder en .csv
+====
+
+- Le fichier IOTool.java permet à l'application de lire ainsi que de sauvegarder des fichiers au format .csv
+- les fichiers : Groupe.java , Individu.java , Sujet.java sont des fichiers qui contiennent la base de donnée
+ 
+*Interface graphique*
+
+- Page d'acceuil de l'interface avec un message de bienvenue pour un meilleur visuel
+
+image::Acceuil.png[]
+
+- Actuellement l'interface possède un onglet Aide dans lequel se trouve toutes les informations relatives à la création de l'application.
+
+image::aide.png[]
+
+.Afficher 
+
+- Aller sur l'onglet affichage et choisissez ce que vous voulez afficher (Etudiant, Intervenant, Sujet, Projet, Groupe).
+
+image::afficher.png[]
+
+- Affichage des groupes
+
+[NOTE]
+====
+Cliquer sur le Groupe que vous souhaiter afficher.
+L'application vous affichera les étudiants du groupe ainsi que leurs Intervenants.  
+====
+
+[WARNING]
+====
+Il est possible que le Groupe ne soit pas affecté à un projet
+====
+
+image::affGroupe.png[]
+
+- Affichage des Intervenants
+
+[WARNING]
+====
+Il est possible qu'un intervenant ne soit pas affecté à un projet
+====
+
+image::affIntervenant.png[]
+
+.Supprimer
+
+- Sélectionner un ou des items dans la liste et cliquer sur le bouton suppprimer pour supprimer l'item
+
+image::suppression.png[]
+
+.Sauvegarder
+- Appuyer sur le bouton sauvegarder
+- Entrer le nom de fichier souhaité
+
+[WARNING]
+====
+N'entrer pas l'extension du fichier, indiquer uniquement le nom
+====
+
+image::sauvegarde.png[]
+
+
+.Associer un intervenant a un projet
+- Afficher les intervenants
+- Selectionner un intervenant
+- Appuyer sur le bouton "assigner projet"
+- Une nouvelle fenêtre s'affiche
+- Choissiser un projet
+- Choissiser un rôle
+
+image::asso.png[]
+
+*Version Web*
+
+La version web de l'application est générée grâce au make.bat.
+Une fois générée, le site web va vous permettre de :
+
+- Afficher toutes les informations des projets (Etudiants, Sujets, Intervenant, Groupe)
+- Rechercher des données en fournissant une chaine de caractère
+- Lier les données entre elles.
+
+link:../OPTIweb/test/OPTIweb.html[OPTI Web]
+
+== Bilan technique du projet
+
+*Librairie :*
+
+- fonction de lecture ainsi que d'écriture disponible
+
+[NOTE]
+====
+Pour plus d'info : link:../doc/index.html[Java DOC ]
+====
+
+
+*Interface graphique*
+
+- Onglet A propos das lequel se trouve toutes les informations relatives à la création de l'application.
+
+image::aide.png[]
+
+[NOTE]
+====
+L'onglet Aide est un objet de JMenuBar
+====
+
+- Afficher un liste (Etudiant, Intervenant, Sujet, Projet, Groupe).
+
+image::afficher.png[]
+
+[NOTE]
+====
+Utilisation de la classe JTable et de la methode importDonnees() et read()
+====
+
+----
+	
+	/*
+	 * Import des données, récupère les informations dans Save.txt
+	 */
+	public static void importDonnees() throws IOException{
+
+		BufferedReader in = new BufferedReader(new FileReader("Data.csv"));
+
+		String line = in.readLine(); 
+		String [] donnees = line.split(",");
+		int nbInd = Integer.parseInt(donnees[0]);
+		int nbSuj = Integer.parseInt(donnees[1]);
+		int nbGrp = Integer.parseInt(donnees[2]);
+		
+		System.out.print(donnees[0]);
+		
+		in.close();
+
+	}
+}
+----
+
+- Supprimer un item d'une liste
+
+image::suppression.png[]
+
+Utilisation de la méthode removeRow de la classe JTable.
+
+----
+	public void supprimer(){
+		
+		int confirmation = 0;
+		
+		if(donneeTab.getSelectedRows().length == 0){
+			JOptionPane.showMessageDialog(null, "Vous n'avez rien sélectionné", "Attention", 
+					JOptionPane.ERROR_MESSAGE); 
+			confirmation = 1;
+		}
+		else{
+			System.out.println(donneeTab.getSelectedRows()[0]);
+			System.out.println(donneeTab.getSelectedRows()[donneeTab.getSelectedRows().length-1]);
+			confirmation = JOptionPane.showConfirmDialog(this, "Voulez vous vraiment supprimer ?", "Suppression",
+					JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+			
+			if(confirmation == 0){
+				
+				DefaultTableModel ModeleTemp = (DefaultTableModel)donneeTab.getModel();
+				int i = 0;
+				while(i < donneeTab.getSelectedRows().length)
+				{
+					ModeleTemp.removeRow(donneeTab.getSelectedRows()[i]);
+				}
+			
+			}
+		}
+	}
+----
+
+[NOTE]
+====
+V2 : la table se mets à jour automatiquement !
+====
+
+- Ajouter un item dans une liste
+
+image::ajout.png[]
+
+[NOTE]
+====
+JOptionPane afin de réaliser les différentes saisies
+====
+
+[NOTE]
+====
+V2 : la table se mets à jour automatiquement !
+====
+
+- Sauvegarder vos modifications
+
+image::sauvegarde.png[]
+
+[NOTE]
+====
+JDialog pour les affichage de la liste de étudiant, intervenants...
+====
+
+- Affichage des groupes
+
+image::affGroupe.png[]
+
+
+- Affichage des Intervenants
+
+image::affIntervenant.png[]
+
+image::a_propos.png[]
+
+
+- La page d'à propos est un objet héritant de la classe JDialog
+
+[NOTE]
+====
+Screenshot
+====
+
+image::sauvegarde.png[]
+
+- Afficher la liste des groupes
+
+- Afficher la liste des projets
+
+
+- Associer un intervenant a un projet
+
+En selectionnant un intervenant, un groupe et un rôle vous pouvez faire une nouvelle association entre toutes ces données.
+
+image::asso.png[]
+
+
+*Version Web*
+
+La version web de l'application est générée grâce au make.bat.
+Une fois générée, le site web va vous permettre de :
+
+- Afficher toutes les informations des projets (Etudiants, Sujets, Intervenant, Groupe)
+- Rechercher des données grâce en fournissant une chaine de caractère
+- Lier les données entre elles.
+
+link:../OPTIweb/test/OPTIweb.html[OPTI Web]
+
+
+
+== Liste des classes utilisées
+
+*Pour L'interface*
+
+- Groupe, Sujet, Projet, Etudiant, Intervenant
+
+Ces classes permettent l'affichage des différentes données.
+
+
+- APropos
+Permets de créer et d'afficher le JDialog gérant le A Propos
+
+- Interfacelog
+Gère l'affichage principal et notamment le menu de l'application
+
+
+*Site web*
+
+
+Le site web est généré grâce à a classe MakeOPTIweb.java
+et aux sous classes de la création pour chaque page de données(Etudiant, Groupe, Sujet, Projet, Intervenant)
+
+== Diagramme des classes
+
+image::diag0.png[]
+
+
+== Documentation Java
+  
+link:../doc/index.html[Java DOC]
+
+== Bilan Financier
+
+- Pour chaque séance nous avons mis 30 minutes pour nous préparer : préparation du matèriel, répartition des tâches...
+- A raison d'une heure de travail par séance avec en plus un suplément de deux heures trentes pour quatres d'entre nous,
+Nous avons effectuer 180 H de travail, au prix du smic horaire, soit : 1715,4 €
+
+== Bilan humain du projet 
+
+- Lors de ce projets, nous avons eu un certain nombre de problèmes, notamment lors de chaque reprise du projet car nous changions souvent de poste et nous
+devions donc repasser derrière le code d'une autre personne ce qui n'est pas toujours évident.
+- Ensuite nous aurions dû mieux réfléchir à la conception de la base de donnée, car lors des refactoring nous ne pouvions parfois plus travailler.
+- En ce qui concerne les relations de groupe, il y avait une bonne ambiance et une volonté de travailler.
+
+== Liste des membres
+
+- Baverez Tristan
+- Trille Jean-Sebastien
+- Pinquier Victor 
+- Larrouy Etienne
+- Rivalier Antoine
