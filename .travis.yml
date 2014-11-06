@@ -33,15 +33,15 @@ script:
   - echo "COMPILATION de l'IHM"
 
 
-  - javac -cp .;./bin -d ./bin ./src/Intervenant.java
-  - javac -cp .;./bin -d ./bin ./src/AssProjet.java
-  - javac -cp .;./bin -d ./bin ./src/SaisieVoeux.java
-  - javac -cp .;./bin -d ./bin ./src/Etudiant.java
-  - javac -cp .;./bin -d ./bin ./src/Projet.java
-  - javac -cp .;./bin -d ./bin ./src/Groupe.java
-  - javac -cp .;./bin -d ./bin ./src/Sujet.java
-  - javac -cp .;./bin -d ./bin ./src/APropos.java
-  - javac -cp .;./bin -d ./bin ./src/InterfaceLog.java
+  - javac -cp .:./bin -d ./bin ./src/interfacv1/Intervenant.java
+  - javac -cp .:./bin -d ./bin ./src/interfacv1/AssProjet.java
+  - javac -cp .:./bin -d ./bin ./src/interfacv1/SaisieVoeux.java
+  - javac -cp .:./bin -d ./bin ./src/interfacv1/Etudiant.java
+  - javac -cp .:./bin -d ./bin ./src/interfacv1/Projet.java
+  - javac -cp .:./bin -d ./bin ./src/interfacv1/Groupe.java
+  - javac -cp .:./bin -d ./bin ./src/interfacv1/Sujet.java
+  - javac -cp .:./bin -d ./bin ./src/interfacv1/APropos.java
+  - javac -cp .:./bin -d ./bin ./src/interfacv1/InterfaceLog.java
   - javac -cp .:./bin -d ./bin ./src/HelloMonde.java
   - javac -cp .:./bin:../junit.jar -d ./bin ./src/HelloMondeTest.java
 
