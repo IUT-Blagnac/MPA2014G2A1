@@ -38,6 +38,9 @@ public class MakeOPTIweb {
 		//Ecriture etudiant
 		writer.println(Etudiant.creationEtudiant());
 		
+		//Ecriture credits
+		writer.println(Credits.creationCredits());
+		
 		//Ecriture script et bas de page
 		writer.println("<script> ");
 		writer.println(" // li click handler which fills the projects search bar ");
