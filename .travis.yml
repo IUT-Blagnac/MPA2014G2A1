@@ -3,6 +3,9 @@ language: java
 notifications:
   email:
     - vic.pinquier@orange.fr
+    - jpp090@gmail.com
+    - antoine.rivalier@etu.univ-tlse2.fr
+    - boulouste31@hotmail.fr
 
 
 before_install:
