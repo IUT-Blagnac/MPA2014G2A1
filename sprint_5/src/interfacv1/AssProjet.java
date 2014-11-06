@@ -1,7 +1,6 @@
 package interfacv1;
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -9,20 +8,17 @@ import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.rmi.server.ExportException;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 import donnees.Participation;
 
+@SuppressWarnings("serial")
 public class AssProjet extends JDialog
 {
 	private donnees.Intervenant choixInter;
@@ -36,13 +32,14 @@ public class AssProjet extends JDialog
 		setSize(450,250);
 	}
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	JPanel panneauDeContenu(String fileName) throws IOException 
 	{
 
 		// Creation des listes deroulantes
 
 		ArrayList listeProjet = new ArrayList();
-		final JComboBox listeDeroulantProjet = new JComboBox();
+		final JComboBox listeDeroulantProjet = new JComboBox<String>();
 		final JComboBox listeDeroulantRole = new JComboBox();
 
 		JButton valider = new JButton("Valider");
@@ -129,6 +126,7 @@ public class AssProjet extends JDialog
 
 		valider.addActionListener(new ActionListener()
 		{
+			@SuppressWarnings("unused")
 			public void actionPerformed(ActionEvent arg0)
 			{
 
