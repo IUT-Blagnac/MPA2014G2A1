@@ -30,7 +30,7 @@ script:
   - echo "COMPILATION de la librairie"
 
 
-  - javac -cp .;./bin -d ./bin ./src/donnees/*.java
+  - javac -cp .;./bin -d ./bin ./src/donnees/Etudiant.java
   - javac -cp .;./bin;./tools/junit.jar -d ./bin ./src/Tests/*.java
 
   
@@ -78,7 +78,7 @@ script:
   - javac -cp .;./bin -d ./bin ./src/interfacv1/APropos.java
   - javac -cp .;./bin -d ./bin ./src/interfacv1/InterfaceLog.java
 
-
+ 
 
   - echo "///////////////////////////////////////////////////////"
   - echo "// EXECUTION de l'IHM"
