@@ -43,7 +43,7 @@ public class Etudiant extends JDialog{
 	JPanel panneauDeContenu(String fileName) throws IOException {
 
 
-		// importation des donn�es
+		// importation des données
 		
 			try {
 				donnees.IOTool.importDonnees("s2014_2015");
@@ -52,7 +52,7 @@ public class Etudiant extends JDialog{
 			}
 		
 		
-		//Cr�ationn des diff�rentes Layout
+		//Créationn des différentes Layout
 		
 		final JPanel pageEtu = new JPanel(new BorderLayout());
 		JPanel grandSud = new JPanel(new FlowLayout());
@@ -71,7 +71,7 @@ public class Etudiant extends JDialog{
 		donneeTab = new JTable( modele ) ;
 		
 	
-		//Cr�ation des nouveaux boutons
+		//Création des nouveaux boutons
 
 		JButton valider = new JButton("Enregistrer");
 		JButton ajouter = new JButton("Ajouter");
@@ -99,7 +99,7 @@ public class Etudiant extends JDialog{
 			}
 		});
 		
-		// Ajout de la liste des intervenants, sujets, projets, auxquel un �tudiant est ratach�
+		// Ajout de la liste des intervenants, sujets, projets, auxquel un étudiant est rataché
 		
 		donneeTab.addMouseListener(new MouseAdapter() {
 			  @SuppressWarnings("unchecked")
@@ -109,7 +109,7 @@ public class Etudiant extends JDialog{
 				    donnees.Projet monProjet = null;
 				    int sizeInt = 0;
 				    
-				    JLabel titreTab = new JLabel ("Donn�es Compl�mentaires");		   
+				    JLabel titreTab = new JLabel ("Données Complémentaires");		   
 				    String [][]numGroupe = new String[0][3];	    
 				    
 				    for( int i = 0 ; i < donnees.Projet.getListeProjet().size() ; i++ ){
@@ -146,7 +146,7 @@ public class Etudiant extends JDialog{
 		    			}
 		    			else if(donnees.Participation.getListeParticipation().get(i).getProjet() == monProjet){
 		    				nombreIntervenant.add(i);
-		    				//Affichage du sujet gr�ce au porojet du groupe
+		    				//Affichage du sujet grâce au porojet du groupe
 		    	        	sizeInt++;
 		    			}
 		    	
@@ -198,7 +198,7 @@ public class Etudiant extends JDialog{
 		});
 			
 
-		//Ajout des diff�rents �l�ments à la fenetre
+		//Ajout des différents éléments à la fenetre
 
 		grandSud.add(valider);
 		grandSud.add(ajouter);
@@ -265,7 +265,7 @@ public class Etudiant extends JDialog{
 		int confirmation = 0;
 		
 		if(donneeTab.getSelectedRows().length == 0){
-			JOptionPane.showMessageDialog(null, "Vous n'avez rien s�lectionn�", "Attention", 
+			JOptionPane.showMessageDialog(null, "Vous n'avez rien sélectionné", "Attention", 
 					JOptionPane.ERROR_MESSAGE); 
 			confirmation = 1;
 		}
@@ -291,13 +291,13 @@ public class Etudiant extends JDialog{
 		
 		ArrayList<String> tabNomArg = new ArrayList<String>();
 		switch(pTitre){
-			case "Liste Etudiants" : tabNomArg.add("nom"); tabNomArg.add("pr�nom"); tabNomArg.add("num�ro �tudiant");
+			case "Liste Etudiants" : tabNomArg.add("nom"); tabNomArg.add("prénom"); tabNomArg.add("numéro étudiant");
 			break;
 			case "Liste Sujets" : tabNomArg.add("nom du sujet"); tabNomArg.add("description"); tabNomArg.add("langages");
 			break;
-			case "Liste Intervenants" : tabNomArg.add("nom"); tabNomArg.add("pr�nom"); tabNomArg.add("num�ro intervenants");
+			case "Liste Intervenants" : tabNomArg.add("nom"); tabNomArg.add("prénom"); tabNomArg.add("numéro intervenants");
 			break;
-			case "Liste Projets" : tabNomArg.add("num�ro de projet"); tabNomArg.add("nom projet"); tabNomArg.add("num�ro intervenants");
+			case "Liste Projets" : tabNomArg.add("numéro de projet"); tabNomArg.add("nom projet"); tabNomArg.add("numéro intervenants");
 			break;
 		}
 		return tabNomArg;

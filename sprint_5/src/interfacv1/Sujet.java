@@ -43,7 +43,7 @@ public class Sujet extends JDialog{
 	JPanel panneauDeContenu(String fileName) throws IOException {
 
 
-		//CrÃ©ationn des diffÃ©rentes Layout
+		//CrÃ©ation des diffÃ©rentes Layout
 
 		JPanel pageEtu = new JPanel(new BorderLayout());
 		JPanel grandSud = new JPanel(new FlowLayout());
@@ -181,7 +181,7 @@ public class Sujet extends JDialog{
 		
 		ArrayList<String> tabNomArg = new ArrayList<String>();
 		switch(pTitre){
-			case "Liste Etudiants" : tabNomArg.add("nom"); tabNomArg.add("prénom"); tabNomArg.add("numéro étudiant");
+			case "Liste Etudiants" : tabNomArg.add("nom"); tabNomArg.add("prï¿½nom"); tabNomArg.add("numï¿½ro ï¿½tudiant");
 			break;
 			case "Liste Sujets" : tabNomArg.add("nom du sujet"); tabNomArg.add("description"); tabNomArg.add("langages");
 			break;
@@ -205,7 +205,7 @@ public class Sujet extends JDialog{
 		dispose();
 	} 
 	
-	// Permet de récupérer le titre
+	// Permet de rï¿½cupï¿½rer le titre
 			public void getTitre(String pTitre){
 				myTitre = pTitre;
 			}

@@ -37,7 +37,7 @@ public class SaisieVoeux  extends JDialog{
 	
 JPanel panneauDeContenu(String fileName) throws IOException {
 		
-		//Création des différentes Layout
+		//CrÃ©ation des diffÃ©rentes Layout
 
 		JPanel pageEtu = new JPanel(new BorderLayout());
 		JPanel grandOuest = new JPanel(new GridLayout());
@@ -47,7 +47,7 @@ JPanel panneauDeContenu(String fileName) throws IOException {
 		final JPanel petitSud = new JPanel(new FlowLayout());
 		
 		
-		final JLabel sujet = new JLabel ("Aucun groupe sélectionné");
+		final JLabel sujet = new JLabel ("Aucun groupe sÃ©lectionnÃ©");
 
 		//Import des donnees
 		try {
@@ -56,19 +56,19 @@ JPanel panneauDeContenu(String fileName) throws IOException {
 			System.out.println(e.getMessage());
 		}
 		
-		//On récupère la liste des groupes
+		//On rÃ©cupÃ©re la liste des groupes
 		tabData = donnees.Groupe.getListeGroupe();
 		
-		//On créé la liste des groupes
+		//On crÃ©Ã© la liste des groupes
 		final List listGrp = new List(tabData.size(), false);
 		
 		
 		
 		ArrayList<String> StringTabData = new ArrayList<String>();
 		
-		//On créé la liste des groupes
+		//On crÃ©Ã© la liste des groupes
 		for(int i=0; i < tabData.size();i++){
-			//Récupère le nom du groupe
+			//RÃ©cupÃ©re le nom du groupe
 			StringTabData.add(tabData.get(i).getNom());
 			
 			listGrp.add((String) StringTabData.get(i));

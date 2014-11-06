@@ -75,13 +75,13 @@ public class InterfaceLog extends JFrame{
 		JPanel app = new JPanel(new BorderLayout());
 
 
-		//Cr�ation des onglets
+		//Création des onglets
 		JMenuBar onglets = new JMenuBar();
 
 		JMenu affichages = new JMenu("Affichages");
 		JMenu aide = new JMenu("Aide");
 
-		//Cr�ation des diff�rents Item
+		//Création des différents Item
 		JMenuItem aPropos = new JMenuItem("A Propos");
 
 
@@ -239,7 +239,7 @@ public class InterfaceLog extends JFrame{
 		return app;
 	}
 
-	//Cr�ation du dial aPropos
+	//Création du dial aPropos
 	private void aProposDial() {
 		APropos dial = new APropos(this, "A Propos");
 		dial.setLocationRelativeTo(this);
@@ -248,42 +248,42 @@ public class InterfaceLog extends JFrame{
 	
 	}
 
-	//Cr�ation du dial liste
+	//Création du dial liste
 	private void affList(String name, String fichier) throws IOException {
 		Sujet dial = new Sujet(this, name,fichier);
 		dial.setLocationRelativeTo(this);
 		dial.setVisible(true);
 	}
 	
-	//Cr�ation du dial Intervenant
+	//Création du dial Intervenant
 	private void affIntervenant(String name, String fichier) throws Exception {
 		Intervenant dial = new Intervenant(this, name,fichier);
 		dial.setLocationRelativeTo(this);
 		dial.setVisible(true);
 	}
 	
-	//Cr�ation du dial liste projets
+	//Création du dial liste projets
 		private void affProjet(String name, String fichier) throws IOException {
 			Projet dial = new Projet(this, name, fichier);
 			dial.setLocationRelativeTo(this);
 			dial.setVisible(true);
 		}
 		
-		//Cr�ation du dial liste groupes
+		//Création du dial liste groupes
 		private void affGroupe(String name, String fichier) throws IOException {
 			Groupe dial = new Groupe(this, name, fichier);
 			dial.setLocationRelativeTo(this);
 			dial.setVisible(true);
 		}
 		
-		//Cr�ation du dial �tudiant
+		//Création du dial étudiant
 		private void affEtudiant(String name, String fichier) throws IOException {
 			Etudiant dial = new Etudiant(this, name, fichier);
 			dial.setLocationRelativeTo(this);
 			dial.setVisible(true);
 		}
 		
-		//Cr�ation du dial Saisie Voeux
+		//Création du dial Saisie Voeux
 		private void affSaisieVoeux(String name, String fichier) throws IOException {
 			SaisieVoeux dial = new SaisieVoeux(this, name, fichier);
 			dial.setLocationRelativeTo(this);

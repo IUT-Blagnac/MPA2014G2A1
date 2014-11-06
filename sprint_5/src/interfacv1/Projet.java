@@ -38,7 +38,7 @@ public class Projet extends JDialog{
 	JPanel panneauDeContenu(String fileName) throws IOException {
 
 
-		//Créationn des différentes Layout
+		//CrÃ©ationn des diffÃ©rentes Layout
 
 		JPanel pageEtu = new JPanel(new BorderLayout());
 		JPanel grandSud = new JPanel(new FlowLayout());
@@ -48,14 +48,14 @@ public class Projet extends JDialog{
 		tabData = donnees.IOTool.readTab(fileName);
 
 		
-		String[] entete ={"Numéro", "Groupe", "ID Sujet"};
+		String[] entete ={"NumÃ©ro", "Groupe", "ID Sujet"};
 		
 		modele = new DefaultTableModel(tabData , entete) ;
 		
 		donneeTab = new JTable( modele ) ;
 
 	
-		//Création des nouveaux boutons
+		//CrÃ©ation des nouveaux boutons
 
 		JButton valider = new JButton("Enregistrer");
 		JButton ajouter = new JButton("Ajouter");
@@ -90,7 +90,7 @@ public class Projet extends JDialog{
 			}
 		});
 
-		//Ajout des différents éléments Ã  la fenetre
+		//Ajout des diffÃ©rents Ã©lÃ©ments Ã  la fenetre
 
 		grandSud.add(valider);
 		grandSud.add(ajouter);
@@ -109,7 +109,7 @@ public class Projet extends JDialog{
 	}
 	
 	public void ajouter(){
-		String[] tabNomArg = { "numéro projet", "acronyme","numéro groupe", "numéro sujet"};
+		String[] tabNomArg = { "numÃ©ro projet", "acronyme","numÃ©ro groupe", "numÃ©ro sujet"};
 		Object[] Lismessg = new Object[donneeTab.getColumnCount()];
 		
 		boolean test=true;
@@ -149,13 +149,13 @@ public void cloner(){
 	int confirmation = 0;
 	
 	if(donneeTab.getSelectedRows().length == 0){
-		JOptionPane.showMessageDialog(null, "Vous n'avez rien sélectionné", "Attention", 
+		JOptionPane.showMessageDialog(null, "Vous n'avez rien sÃ©lectionnÃ©", "Attention", 
 				JOptionPane.ERROR_MESSAGE); 
 		confirmation = 1;
 	}
 	else{
 		if(donneeTab.getSelectedRows().length > 1){
-			JOptionPane.showMessageDialog(null, "Vous avez trop sélectionné de ligne", "Attention", 
+			JOptionPane.showMessageDialog(null, "Vous avez trop sÃ©lectionnÃ© de ligne", "Attention", 
 					JOptionPane.ERROR_MESSAGE); 
 			confirmation = 1;
 		}
@@ -183,7 +183,7 @@ public void supprimer(){
 		int confirmation = 0;
 		
 		if(donneeTab.getSelectedRows().length == 0){
-			JOptionPane.showMessageDialog(null, "Vous n'avez rien sélectionné", "Attention", 
+			JOptionPane.showMessageDialog(null, "Vous n'avez rien sÃ©lectionnÃ©", "Attention", 
 					JOptionPane.ERROR_MESSAGE); 
 			confirmation = 1;
 		}

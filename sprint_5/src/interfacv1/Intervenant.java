@@ -44,7 +44,7 @@ public class Intervenant extends JDialog{
 	JPanel panneauDeContenu(String fileName) throws IOException {
 
 
-		//Cr�ationn des diff�rentes Layout
+		//Créationn des différentes Layout
 		JPanel pageEtu = new JPanel(new BorderLayout());
 		
 		JPanel pageEtuW = new JPanel(new BorderLayout());
@@ -56,10 +56,10 @@ public class Intervenant extends JDialog{
 		JPanel petitNord = new JPanel(new FlowLayout());
 		final JPanel petitCentre = new JPanel(new BorderLayout());
 		
-		final JLabel sujet = new JLabel ("Aucun groupe s�lectionn�");
+		final JLabel sujet = new JLabel ("Aucun groupe sélectionné");
 
 
-		// Import des donn�es
+		// Import des données
 		
 		try {
 			donnees.IOTool.importDonnees("s2014_2015");
@@ -72,7 +72,7 @@ public class Intervenant extends JDialog{
 		
     	String [][] tabDataTemp = new String[donnees.Intervenant.getListeIntervenant().size()][3];
     	
-    	// R�cup�ration des donn�es des Intervenants
+    	// Récupération des données des Intervenants
     	
     	for(int i = 0 ; i < tabDataTemp.length ; i++){
 			for(int j = 0; j < 3 ;j++){
@@ -92,7 +92,7 @@ public class Intervenant extends JDialog{
 		
 		JScrollPane scrollTab = new JScrollPane(donneeTab);
 	
-		//Cr�ation des nouveaux boutons
+		//Création des nouveaux boutons
 
 		JButton valider = new JButton("Enregistrer");
 		JButton ajouter = new JButton("Ajouter");
@@ -132,7 +132,7 @@ public class Intervenant extends JDialog{
 			}
 		});
 		
-		// Affiche les projets auxquelles l'intervenant est associ�
+		// Affiche les projets auxquelles l'intervenant est associé
 		donneeTab.addMouseListener(new MouseAdapter() {
 			  public void mouseClicked(MouseEvent e) {
 			    
@@ -156,7 +156,7 @@ public class Intervenant extends JDialog{
 
 				    String [][] tabDataTemp2 = new String[count][4];
 				    
-				  //Remplis la JTable avec le numProjet, titre de sujet, r�le et nom de groupe
+				  //Remplis la JTable avec le numProjet, titre de sujet, rôle et nom de groupe
 				    for(int i=0 ; i < listParRes.size() ; i++){
 	
 				    		tabDataTemp2[i][0] = listParRes.get(i).getProjet().getNum();
@@ -167,9 +167,9 @@ public class Intervenant extends JDialog{
 
 				    }
 		        	
-		        	//Affichage de la JTable des �tudiants du groupe
+		        	//Affichage de la JTable des étudiants du groupe
 		        	
-		    		String[] entete2 = {"Projet","Sujet","R�le", "Groupe"};
+		    		String[] entete2 = {"Projet","Sujet","Rôle", "Groupe"};
 
 		    		DefaultTableModel modele = new DefaultTableModel(tabDataTemp2 , entete2);
 		        	JTable donneeTab2 = new JTable( modele ) ;
@@ -184,7 +184,7 @@ public class Intervenant extends JDialog{
 		});
 		
 
-		//Ajout des diff�rents �l�ments � la fenetre
+		//Ajout des différents éléments à la fenetre
 
 		grandSud.add(valider);
 		grandSud.add(ajouter);
@@ -257,7 +257,7 @@ public class Intervenant extends JDialog{
 		int confirmation = 0;
 		
 		if(donneeTab.getSelectedRows().length == 0){
-			JOptionPane.showMessageDialog(null, "Vous n'avez rien s�lectionn�", "Attention", 
+			JOptionPane.showMessageDialog(null, "Vous n'avez rien sélectionné", "Attention", 
 					JOptionPane.ERROR_MESSAGE); 
 			confirmation = 1;
 		}

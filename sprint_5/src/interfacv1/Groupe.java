@@ -40,7 +40,7 @@ public class Groupe extends JDialog{
 	
 	JPanel panneauDeContenu() throws IOException {
 		
-		//Création des différentes Layout
+		//CrÃ©ation des diffÃ©rentes Layout
 
 		JPanel pageEtu = new JPanel(new BorderLayout());
 		JPanel grandOuest = new JPanel(new GridLayout());
@@ -49,7 +49,7 @@ public class Groupe extends JDialog{
 		final JPanel petitSud = new JPanel(new BorderLayout());
 		
 		
-		final JLabel sujet = new JLabel ("Aucun groupe sélectionné"); 
+		final JLabel sujet = new JLabel ("Aucun groupe sÃ©lectionnÃ©"); 
 
 
 		//Import des donnees
@@ -59,19 +59,19 @@ public class Groupe extends JDialog{
 			System.out.println(e.getMessage());
 		}
 		
-		//On récupère la liste des groupes
+		//On rÃ©cupÃ©re la liste des groupes
 		tabData = donnees.Groupe.getListeGroupe();
 		
-		//On créé la liste des groupes
+		//On crÃ©Ã© la liste des groupes
 		final List listGrp = new List(tabData.size(), false);
 		
 		
 		
 		ArrayList<String> StringTabData = new ArrayList<String>();
 		
-		//On créé la liste des groupes
+		//On crÃ©Ã© la liste des groupes
 		for(int i=0; i < tabData.size();i++){
-			//Récupère le nom du groupe
+			//RÃ©cupÃ©re le nom du groupe
 			StringTabData.add(tabData.get(i).getNom());
 			
 			listGrp.add((String) StringTabData.get(i));
@@ -86,7 +86,7 @@ public class Groupe extends JDialog{
 	        	
 	        	int size = tabData.get(listGrp.getSelectedIndex()).getMembres().size();
 	        	
-	        	//Vérification du nombre d'étudiants dans le groupe
+	        	//VÃ©rification du nombre d'Ã©tudiants dans le groupe
 	        	if(tabData.get(listGrp.getSelectedIndex()).getMembres().get(3)==null){
 	        		size --;
 	        	}
@@ -94,7 +94,7 @@ public class Groupe extends JDialog{
 	        		size --;
 	        	}
 	        	String [][] tabDataTemp = new String[size][3];
-	        	String[] enteteGrp = {"Nom","Prenom", "Numéro Etudiant"};
+	        	String[] enteteGrp = {"Nom","Prenom", "NumÃ©ro Etudiant"};
 
 	    		//Remplis la JTable avec le nom, le prenom ou le numEtu
 	    		for(int i = 0 ; i < tabDataTemp.length ; i++){
@@ -114,19 +114,19 @@ public class Groupe extends JDialog{
 	    		int i=0;
 	    		boolean fini = false;
 	    		boolean projet = false;
-	    		//Récupération du projet en comparant les groupes des projets
+	    		//RÃ©cupÃ©ration du projet en comparant les groupes des projets
 	    		while(!fini){
 	    			
 	    			if(i >= donnees.Projet.getListeProjet().size()){
-	    				sujet.setText("Ce groupe n'a pas encore été affecté a un projet");
+	    				sujet.setText("Ce groupe n'a pas encore Ã©tÃ© affectÃ© a un projet");
 	    				fini = true;
 	    				
 	    			}
 	    			
 	    			else if(donnees.Projet.getListeProjet().get(i).getGroupe() == tabData.get(listGrp.getSelectedIndex())){
 		
-	    				//Affichage du sujet grâce au porojet du groupe
-	    	        	sujet.setText("Sujet : "+donnees.Projet.getListeProjet().get(i).getSujet().getTitre()+" Voeux n° "+(tabData.get(listGrp.getSelectedIndex()).getVoeux().indexOf(donnees.Projet.getListeProjet().get(i).getSujet())+1));
+	    				//Affichage du sujet grÃ¢ce au porojet du groupe
+	    	        	sujet.setText("Sujet : "+donnees.Projet.getListeProjet().get(i).getSujet().getTitre()+" Voeux nÂ° "+(tabData.get(listGrp.getSelectedIndex()).getVoeux().indexOf(donnees.Projet.getListeProjet().get(i).getSujet())+1));
 	    				fini = true;
 	    				projet = true;
 	    			}
@@ -151,13 +151,13 @@ public class Groupe extends JDialog{
 	        	
 	        	//Ajout des intervenants
 	    		JLabel inter = new JLabel ("");
-	        	String []enteteInt = {"Qualité","Nom","Prenom","Numéro Intervenant"};
+	        	String []enteteInt = {"QualitÃ©","Nom","Prenom","NumÃ©ro Intervenant"};
 	        	
 	        	
 	        	//Cherche le nombre d'intervenants
 	        	int sizeInt = 0;
 	        	
-	    		//vérifie que le groupe a un projet pûis cherche les intervenants si il a un groupe
+	    		//vÃ©rifie que le groupe a un projet puis cherche les intervenants si il a un groupe
 	    		if(projet){
 	    			inter.setText("Liste des intervenants pour ce groupe");
 	    			donnees.Projet monProjet = donnees.Projet.getListeProjet().get(i-1);
@@ -175,7 +175,7 @@ public class Groupe extends JDialog{
 		    			}
 		    			else if(donnees.Participation.getListeParticipation().get(i).getProjet() == monProjet){
 		    				nombreIntervenant.add(i);
-		    				//Affichage du sujet grâce au porojet du groupe
+		    				//Affichage du sujet grÃ¢ce au projet du groupe
 		    	        	sizeInt++;
 		    			}
 		    	
