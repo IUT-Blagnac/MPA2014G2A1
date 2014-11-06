@@ -50,7 +50,7 @@ script:
 
   
   - javac -cp .:./bin -d /bin .src/donnees/*.java
-  - javac -cp .:./bin;/tools/junit.jar -d /bin .src/Tests/*.java
+  - javac -cp .:./bin:../junit.jar -d ./bin .src/Tests/*.java
   
   
 
