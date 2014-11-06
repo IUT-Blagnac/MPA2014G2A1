@@ -32,7 +32,7 @@ public class APropos extends JDialog{
 				"<br>Sprint 4</center></h1></html>");
 		projet.setEnabled(false);
 		
-		JLabel infos = new JLabel("<html>Université Toulouse II" +
+		JLabel infos = new JLabel("<html>UniversitÃ© Toulouse II" +
 				"<br>IUT Blagnac 2014-2015" +
 				"<br>DUT INFO S3/Module MPA</html>");
 		
