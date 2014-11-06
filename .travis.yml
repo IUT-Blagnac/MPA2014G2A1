@@ -32,7 +32,7 @@ script:
   - echo "COMPILATION de la librairie"
 
   
-  - javac -cp .;./bin -d %BINDIR% .src/donnees/*.java
+  - javac -cp .;./bin -d ./bin .src/donnees/*.java
   - javac -cp .;./bin;./tools/junit.jar -d ./bin .src/Tests/*.java
   
 
@@ -40,12 +40,12 @@ script:
   - echo "Exécution des Tests"
 
 
-  - cd ./bin
+  - cd /bin
   - java -cp .;../bin;../tools/junit.jar junit.textui.TestRunner Tests.EtudiantTest
   - java -cp .;../bin;../tools/junit.jar junit.textui.TestRunner Tests.IntervenantTest
   - java -cp .;../bin;../tools/junit.jar junit.textui.TestRunner Tests.GroupeTest
   - java -cp .;../bin;../tools/junit.jar junit.textui.TestRunner Tests.ProjetTest
-  -  java -cp .;../bin;../tools/junit.jar junit.textui.TestRunner Tests.ParticipationTest
+  - java -cp .;../bin;../tools/junit.jar junit.textui.TestRunner Tests.ParticipationTest
   - java -cp .;../bin;../tools/junit.jar junit.textui.TestRunner Tests.SujetTest
  
   - cd sprint_5
