@@ -20,16 +20,16 @@ public class Etudiant {
 
 	
 	/**Constructeur etudiant complet.
-	 * @param pNom  String, nom de l'Ètudiant
-	 * @param pPrenom  String, prÈnom de l'Ètudiant
-	 * @param pNumEtu ID String, id de l'Ètudiant
-	 * @throws Exception si l'id de l'Ètudiant existe dÈj‡
+	 * @param pNom  String, nom de l'√©tudiant
+	 * @param pPrenom  String, pr√©nom de l'√©tudiant
+	 * @param pNumEtu ID String, id de l'√©tudiant
+	 * @throws Exception si l'id de l'√©tudiant existe d√©j√†
 	 */
 	public Etudiant (String pNumEtu,String pNom, String pPrenom) throws Exception{
 		
 		for(Etudiant etuTemp : listeEtu){
 			if(etuTemp.numEtu.equals(pNumEtu)){
-				Exception idExistant = new Exception("Id de l'etudiant dÈj‡ existant");
+				Exception idExistant = new Exception("Id de l'etudiant d√©j√† existant");
 				throw  idExistant;
 			}
 		}
@@ -57,14 +57,14 @@ public class Etudiant {
 		return this.prenom;
 	}
 	
-	/**Accesseur de l'ID de l'Ètudiant
+	/**Accesseur de l'ID de l'√©tudiant
 	 * @return numEtu - String
 	 */
 	public String getNumEtu(){
 		return this.numEtu;
 	}
 	
-	/**Accesseur du groupe de l'Ètudiant, renvoie null si l'Ètudiant n'a pas de groupe
+	/**Accesseur du groupe de l'√©tudiant, renvoie null si l'√©tudiant n'a pas de groupe
 	 * @return groupe - Groupe
 	 */
 	public Groupe getGroupe(){
@@ -77,7 +77,7 @@ public class Etudiant {
 		return aTrouve;
 	}
 	
-	/**Accesseur de la liste des Ètudiants existant
+	/**Accesseur de la liste des √©tudiants existant
 	 * @return listeEtu - ArrayList d'etudiants
 	 */
 	public static ArrayList<Etudiant> getListeIndividu(){
@@ -88,7 +88,7 @@ public class Etudiant {
 
 
 	/**Setter du nom de l'etudiant
-	 * <b> Attention ! Le nom est aussi l'ID de l'Ètudiant </b>
+	 * <b> Attention ! Le nom est aussi l'ID de l'√©tudiant </b>
 	 * @param pNom  String
 	 */
 	public void setNom(String pNom){
@@ -109,14 +109,14 @@ public class Etudiant {
 		
 	}
 	
-	/**Setter de l'ID de l'Ètudiant.
+	/**Setter de l'ID de l'√©tudiant.
 	 * @param pNumEtu  String
-	 * @throws Exception si l'id de l'Ètudiant existe dÈj‡
+	 * @throws Exception si l'id de l'√©tudiant existe d√©j√†
 	 */
 	public void setNumEtu(String pNumEtu) throws Exception{
 		for(Etudiant etuTemp : listeEtu){
 			if(etuTemp.numEtu.equals(pNumEtu)){
-				Exception idExistant = new Exception("Id de l'etudiant dÈj‡ existant");
+				Exception idExistant = new Exception("Id de l'etudiant d√©j√† existant");
 				throw  idExistant;
 			}
 		}

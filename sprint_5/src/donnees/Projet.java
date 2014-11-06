@@ -2,7 +2,7 @@ package donnees;
 
 import java.util.ArrayList;
 
-/**Classe Projet, contenant donc les projets crÈÈs. Un projet ne peut Ítre crÈÈ que si le groupe et le sujet sont dÈterminÈs
+/**Classe Projet, contenant donc les projets cr√©√©s. Un projet ne peut √™tre cr√©√© que si le groupe et le sujet sont d√©termin√©s
  * @author groupe2A1
  *
  */
@@ -16,19 +16,19 @@ public class Projet {
 
 
 	//Constructeurs
-	/**Constructeur complet du projet. <b> Attention ! L'ordre des deux derniers paramËtres intervenants sont importants : le premier est superviseur, le deuxiËme support technique. 
-	 * Ne pas hÈsiter ‡ affecter ‡ null pour conserver l'ordre </b>
+	/**Constructeur complet du projet. <b> Attention ! L'ordre des deux derniers paramtres intervenants sont importants : le premier est superviseur, le deuxi√®me support technique. 
+	 * Ne pas h√©siter √† affecter √† null pour conserver l'ordre </b>
 	 * @param pNumPrj ID String, id du projet, unique
 	 * @param pSujet Sujet, sujet du projet
-	 * @param pGroupe Groupe, groupe affectÈ au projet
+	 * @param pGroupe Groupe, groupe affect√© au projet
 	 * @param pSuperviseur Intervenant, superviseur du projet
 	 * @param pSupportTechnique Intervenant, support technique du projet
-	 * @throws Exception Si l'ID du projet existe dÈj‡
+	 * @throws Exception Si l'ID du projet existe d√©j√†
 	 */
 	public Projet(String pNumPrj, Sujet pSujet, Groupe pGroupe) throws Exception{
 		for(Projet prjTemp : listeProjet){
 			if(prjTemp.numPrj.equals(pNumPrj)){
-				Exception idExistant = new Exception("Numero du projet dÈj‡ existant");
+				Exception idExistant = new Exception("Numero du projet d√©j√† existant");
 				throw  idExistant;
 			}
 		}
@@ -113,12 +113,12 @@ public class Projet {
 
 	/**Setter du numero de Projet. <b> Aussi ID du projet</b>
 	 * @param pNumPrj String, ID du projet
-	 * @throws Exception levÈe si l'ID existe dÈj‡
+	 * @throws Exception lev√©e si l'ID existe d√©j√†
 	 */
 	public void setNum(String pNumPrj) throws Exception{
 		for(Projet prjTemp : listeProjet){
 			if(prjTemp.numPrj.equals(pNumPrj)){
-				Exception idExistant = new Exception("Numero du projet dÈj‡ existant");
+				Exception idExistant = new Exception("Numero du projet d√©j√† existant");
 				throw  idExistant;
 			}
 		}
@@ -165,18 +165,18 @@ public class Projet {
 
 	}
 
-	//MÈthode
+	//M√©thode
 
 
-	/**<b> En cours d'implÈmentation </b>
-	 * MÈthode permettant d'affecter de faÁon automatique les sujets aux groupes.
-	 * Si deux groupes ont exactement les mÍmes voeux ==> math random.
+	/**<b> En cours d'impl√©mentation </b>
+	 * M√©thode permettant d'affecter de fa√ßon automatique les sujets aux groupes.
+	 * Si deux groupes ont exactement les m√™mes voeux ==> math random.
 	 * @throws Exception
 	 */
 	@SuppressWarnings("unused")
 	public void AutoAffectation() throws Exception{
 
-		//DÈclaration 
+		//D√©claration 
 		ArrayList<Groupe> groupeSProjet = new ArrayList<Groupe>();
 		ArrayList<Groupe> groupeTempList = new ArrayList<Groupe>();
 		ArrayList<Groupe> groupeAProjet = new ArrayList<Groupe>();

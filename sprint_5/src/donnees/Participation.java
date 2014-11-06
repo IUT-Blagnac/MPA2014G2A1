@@ -16,10 +16,10 @@ public class Participation {
 	static ArrayList<Participation> listeParticipation = new ArrayList<Participation>();
 
 	/**Constructeur complet de participation
-	 * @param pProjet Projet sélectionné
-	 * @param pIntervenant Intervenant concerné
+	 * @param pProjet Projet sÃ©lectionnÃ©
+	 * @param pIntervenant Intervenant concernÃ©
 	 * @param pRole Int, 0 pour client, 1 pour support et 2 pour superviseur
-	 * @throws Exception - Si la participation existe déjà ou l'erreur superviseur/client
+	 * @throws Exception - Si la participation existe dÃ©jÃ  ou l'erreur superviseur/client
 	 */
 	public Participation(Projet pProjet, Intervenant pIntervenant, int pRole) throws Exception{
 
@@ -28,11 +28,11 @@ public class Participation {
 			if(pProjet==test.projet){
 				if(pIntervenant==test.intervenant){
 					if( (test.role==0&&pRole==1)||(test.role==1&&pRole==0) ){
-						Exception participationImpossible = new Exception("Cette participation n'est pas possible, l'intervenant ne peut être client et superviseur");
+						Exception participationImpossible = new Exception("Cette participation n'est pas possible, l'intervenant ne peut Ãªtre client et superviseur");
 						throw  participationImpossible;
 					}
 					if(pRole==test.role){
-						Exception participationExistante = new Exception("Cette participation existe déjà");
+						Exception participationExistante = new Exception("Cette participation existe dÃ©jÃ ");
 						throw  participationExistante;
 					}
 				}
@@ -107,7 +107,7 @@ public class Participation {
 		this.role=pRole;
 	}
 
-	//Méthodes
+	//MÃ©thodes
 
 
 

@@ -25,12 +25,12 @@ public class Sujet {
 	 * @param pContexte String, contexte du sujet
 	 * @param pProjet String, description du sujet
 	 * @param pOutils Stting, outils pour le sujet
-	 * @throws Exception idExistant, si l'acronyme du sujet est dÈj‡ pris, lËve une exception
+	 * @throws Exception idExistant, si l'acronyme du sujet est d√©j√† pris, l√®ve une exception
 	 */
 	public Sujet(String pID, String pTitre, String pContexte, String pDescription, String pOutils) throws Exception{
 		for(Sujet sujetTemp : listeSujet){
 			if(sujetTemp.ID.equals(pID)){
-				Exception idExistant = new Exception("Numero du sujet dÈj‡ existant");
+				Exception idExistant = new Exception("Numero du sujet d√©j√† existant");
 				throw  idExistant;
 			}
 		}
@@ -106,12 +106,12 @@ public class Sujet {
 	
 	/** Setter de l'acronyme du sujet
 	 * @param pAcronyme String
-	 * @throws Exception acronymeExistant, si l'acronyme existe dÈj‡, l'exception est levÈe
+	 * @throws Exception acronymeExistant, si l'acronyme existe d√©j√†, l'exception est lev√©e
 	 */
 	public void setID(String pID) throws Exception{
 		for(Sujet sujetTemp : listeSujet){
 			if(sujetTemp.ID.equals(pID)){
-				Exception idExistant = new Exception("Numero du projet dÈj‡ existant");
+				Exception idExistant = new Exception("Numero du projet d√©j√† existant");
 				throw  idExistant;
 			}
 		}

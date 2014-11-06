@@ -2,7 +2,7 @@ package donnees;
 
 import java.util.ArrayList;
 
-/**Cette classe Groupe, dÈfini les groupes composÈs de 3 ‡ 5 Ètudiants, avec un nom de groupe lui servant d'ID.
+/**Cette classe Groupe, d√©fini les groupes compos√©s de 3 √† 5 √©tudiants, avec un nom de groupe lui servant d'ID.
  * @author groupe2A1
  *
  */
@@ -22,14 +22,14 @@ public class Groupe {
 	 * @param pEtu2 Etudiant, etudiant numero 3
 	 * @param pEtu3 Etudiant, etudiant numero 4
 	 * @param pEtu4 Etudiant, etudiant numero 5
-	 * @throws Exception si l'ID du groupe existe dÈj‡
+	 * @throws Exception si l'ID du groupe existe d√©j√†
 	 */
 	public Groupe(String pNom, Etudiant pEtu0, Etudiant pEtu1, Etudiant pEtu2, Etudiant pEtu3, Etudiant pEtu4) throws Exception{
 
 		for(Groupe grpTemp : listeGroupe){
 			if(grpTemp.nom.equals(pNom)){
 				System.out.println(pNom);
-				Exception idExistant = new Exception("Nom du groupe dÈj‡ existant");
+				Exception idExistant = new Exception("Nom du groupe d√©j√† existant");
 				throw  idExistant;
 			}
 		}
@@ -50,7 +50,7 @@ public class Groupe {
 	 * @param pEtu1 Etudiant, etudiant numero 2
 	 * @param pEtu2 Etudiant, etudiant numero 3
 	 * @param pEtu3 Etudiant, etudiant numero 4
-	 * @throws Exception si l'ID du groupe existe dÈj‡
+	 * @throws Exception si l'ID du groupe existe d√©j√†
 	 */
 	public Groupe(String pNom, Etudiant pEtu0, Etudiant pEtu1, Etudiant pEtu2, Etudiant pEtu3) throws Exception{
 		this(pNom, pEtu0, pEtu1, pEtu2, pEtu3, null);
@@ -62,7 +62,7 @@ public class Groupe {
 	 * @param pEtu0 Etudiant, etudiant numero 1
 	 * @param pEtu1 Etudiant, etudiant numero 2
 	 * @param pEtu2 Etudiant, etudiant numero 3
-	 * @throws Exception si l'ID du groupe existe dÈj‡
+	 * @throws Exception si l'ID du groupe existe d√©j√†
 	 */
 	public Groupe(String pNom, Etudiant pEtu0, Etudiant pEtu1, Etudiant pEtu2) throws Exception{
 		this(pNom, pEtu0, pEtu1, pEtu2, null, null);
@@ -72,8 +72,8 @@ public class Groupe {
 	
 	
 	/**
-	 * Accesseur permettant l'obtention des Ètudiants prÈsents dans le groupe, compris entre 3 et 5
-	 * @return membres - ArrayList d'Ètudiants, les membres du groupe
+	 * Accesseur permettant l'obtention des √©tudiants pr√©sents dans le groupe, compris entre 3 et 5
+	 * @return membres - ArrayList d'√©tudiants, les membres du groupe
 	 */
 	public ArrayList<Etudiant> getMembres(){
 		return this.membres;
@@ -87,14 +87,14 @@ public class Groupe {
 		return this.nom;
 	}
 
-	/**Accesseur retournant une ArrayList de Groupe, contenant tous les groupes crÈÈs
+	/**Accesseur retournant une ArrayList de Groupe, contenant tous les groupes cr√©√©s
 	 * @return listeGroupe - ArrayList de Groupe
 	 */
 	public static ArrayList<Groupe> getListeGroupe(){
 		return listeGroupe;
 	}
 	
-	/**Accesseur du Projet attribuÈ au Groupe, renvoie null si le groupe ne s'est pas encore vu attribuÈ de projet
+	/**Accesseur du Projet attribu√© au Groupe, renvoie null si le groupe ne s'est pas encore vu attribu√© de projet
 	 * @return aTrouve - Projet, ou null
 	 */
 	public Projet getProjet(){
@@ -107,7 +107,7 @@ public class Groupe {
 		return aTrouve;
 	}
 	
-	/**Accesseur du sujet choisi pour le groupe, renvoie null si pas de sujet attribuÈ
+	/**Accesseur du sujet choisi pour le groupe, renvoie null si pas de sujet attribu√©
 	 * @return aTrouve - Sujet, ou null
 	 */
 	public Sujet getSujet(){
@@ -125,7 +125,7 @@ public class Groupe {
 		return this.voeux;
 	}
 
-	/**Accesseur de tous les voeux en position passÈe en paramËtre
+	/**Accesseur de tous les voeux en position pass√©e en param√©tre
 	 * @param pos
 	 * @return listeVoeuxPos - ArrayList de sujets
 	 */
@@ -137,7 +137,7 @@ public class Groupe {
 		return listeVoeuxPos;
 	}
 
-	/** Accesseur retournant les groupes non affectÈs ‡ un projet
+	/** Accesseur retournant les groupes non affect√©s √† un projet
 	 * @return pListe - ArrayList de Groupe
 	 */
 	public static ArrayList<Groupe> getGrpSansSujet(){
@@ -158,7 +158,7 @@ public class Groupe {
 		return pListe;
 	}
 	
-	/** Accesseur retournant les groupes affectÈs ‡ un projet
+	/** Accesseur retournant les groupes affect√©s √† un projet
 	 * @return pListe - ArrayList de Groupe
 	 */
 	public static ArrayList<Groupe> getGrpAvecSujet(){
@@ -179,8 +179,8 @@ public class Groupe {
 		return pListe;
 	}
 
-	/** Fonction retournant les groupes ayant le sujet passÈ en paramËtre dans leur liste de voeux ‡ la position donnÈe en paramËtre
-	 * @param pSujet Sujet, sujet ‡ trouver
+	/** Fonction retournant les groupes ayant le sujet pass√© en param√©tre dans leur liste de voeux √† la position donn√©e en param√©tre
+	 * @param pSujet Sujet, sujet √† trouver
 	 * @param pos Int, position du sujet dans la liste de voeux
 	 * @return pListe - ArrayList de Groupe
 	 */
@@ -206,18 +206,18 @@ public class Groupe {
 		this.nom = pNom;
 	}
 
-	/**Methode permettant De mettre le voeux passÈ en paramËtre ‡ la position passÈe en paramËtre
-	 * @param pVoeux Sujet, voeux ‡ bouger
-	 * @param pos Int, position ‡ laquelle le bouger
+	/**Methode permettant De mettre le voeux pass√© en param√®tre √† la position pass√©e en param√®tre
+	 * @param pVoeux Sujet, voeux √† bouger
+	 * @param pos Int, position √† laquelle le bouger
 	 */
 	public void setPosVoeux(Sujet pVoeux, int pos){
 		voeux.remove(pVoeux);
 		voeux.add(pos, pVoeux);
 	}
 
-	/**MÈthode permettant d'Èchanger les positions des deux voeux changÈs en paramËtres
+	/**M√©thode permettant d'√©changer les positions des deux voeux chang√©s en param√®tres
 	 * @param pVoeux Sujet, premier voeux
-	 * @param pVoeux2 Sujet, deuxiËme voeux
+	 * @param pVoeux2 Sujet, deuxi√®me voeux
 	 */
 	public void echPosVoeux(Sujet pVoeux, Sujet pVoeux2){
 		int posIni = voeux.indexOf(pVoeux);

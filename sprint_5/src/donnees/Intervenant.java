@@ -2,7 +2,7 @@ package donnees;
 
 import java.util.ArrayList;
 
-/**Classe Intervenant, contenant donc les intervenants crÈÈs. 
+/**Classe Intervenant, contenant donc les intervenants cr√©√©s. 
  * @author groupe2A1
  *
  */
@@ -19,13 +19,13 @@ public class Intervenant {
 	 * @param pNom String, nom de l'intervenant
 	 * @param pPrenom String, prenom de l'intervenant
 	 * @param pNumInt ID String, id de l'intervenant
-	 * @throws Exception Si l'ID de l'intervenant existe dÈj‡
+	 * @throws Exception Si l'ID de l'intervenant existe d√©j√†
 	 */
 	public Intervenant ( String pNumInt, String pNom, String pPrenom) throws Exception{
 		
 		for(Intervenant interTemp : listeIntervenant){
 			if(interTemp.numInt.equals(pNumInt)){
-				Exception idExistant = new Exception("Id de l'intervenant dÈj‡ existant");
+				Exception idExistant = new Exception("Id de l'intervenant d√©j√† existant");
 				throw  idExistant;
 			}
 		}
@@ -47,7 +47,7 @@ public class Intervenant {
 	}
 	
 	/** Accesseur du prenom de l'intervenant
-	 * @return prÈnom - String
+	 * @return pr√©nom - String
 	 */
 	public  String getPrenom(){
 		return this.prenom;
@@ -92,7 +92,7 @@ public class Intervenant {
 	public void setnumInt(String pNumInt) throws Exception{
 		for(Intervenant interTemp : listeIntervenant){
 			if(interTemp.numInt.equals(pNumInt)){
-				Exception idExistant = new Exception("Id de l'intervenant dÈj‡ existant");
+				Exception idExistant = new Exception("Id de l'intervenant d√©j√† existant");
 				throw  idExistant;
 			}
 		}

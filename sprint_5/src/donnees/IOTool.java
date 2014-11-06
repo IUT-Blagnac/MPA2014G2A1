@@ -29,7 +29,7 @@ public class IOTool {
 		return donnees; 
 	}
 
-	/**Comme read() mais retourne un tableau à deux dimensions au lieu d'un array
+	/**Comme read() mais retourne un tableau Ã  deux dimensions au lieu d'un array
 	 * @param path String, ne pas mettre .csv ou autre juste le nom du fichier
 	 * @return tabDeString - String[][]
 	 * @throws IOException
@@ -265,12 +265,12 @@ public class IOTool {
 		//Initialisation du lecteur
 		BufferedReader in = new BufferedReader(new FileReader("data/"+path+".csv"));
 
-		//Lecture ligne à ligne et séparation des données
+		//Lecture ligne Ã  ligne et sÃ©paration des donnÃ©es
 		line = in.readLine();
 		while(line!=null){
 			String [] ligne = line.split(";");
 
-			//Import des données
+			//Import des donnÃ©es
 
 			Etudiant tempEtu = new Etudiant(ligne[0],ligne[1],ligne[2]);
 			
@@ -293,13 +293,13 @@ public class IOTool {
 		//Initialisation du lecteur
 		BufferedReader in = new BufferedReader(new FileReader("data/"+path+".csv"));
 
-		//Lecture ligne à ligne et séparation des données
+		//Lecture ligne Ã  ligne et sÃ©paration des donnÃ©es
 
 		line = in.readLine();
 		while(line!=null){
 			String [] ligne = line.split(";");
 
-			//Import des données
+			//Import des donnÃ©es
 			Intervenant tempInt = new Intervenant(ligne[0],ligne[1],ligne[2]);
 			line = in.readLine();
 		}
@@ -321,14 +321,14 @@ public class IOTool {
 		//Initialisation du lecteur
 		BufferedReader in = new BufferedReader(new FileReader("data/"+path+".csv"));
 
-		//Lecture ligne à ligne et séparation des données
+		//Lecture ligne Ã  ligne et sÃ©paration des donnÃ©es
 		line = in.readLine();
 		while(line!=null){
 			String [] ligne = line.split(";");
 
-			//Import des données
+			//Import des donnÃ©es
 			
-			//Etudiants à insérer dans le groupe
+			//Etudiants Ã  insÃ©rer dans le groupe
 			Etudiant etuTemp1 = null;
 			Etudiant etuTemp2 = null;
 			Etudiant etuTemp3 = null;
@@ -357,7 +357,7 @@ public class IOTool {
 			}
 			
 			if(etuTemp1==null){
-				Exception etudiantIntrouvable = new Exception("Premier etudiant non trouvé, la liste contenant les étudiants n'est probablement pas importé");
+				Exception etudiantIntrouvable = new Exception("Premier etudiant non trouvÃ©, la liste contenant les Ã©tudiants n'est probablement pas importÃ©");
 				throw etudiantIntrouvable;
 			}
 
@@ -398,7 +398,7 @@ public class IOTool {
 		//Initialisation du lecteur
 		BufferedReader in = new BufferedReader(new FileReader("data/"+path+".csv"));
 
-		//Lecture ligne à ligne et séparation des données
+		//Lecture ligne Ã  ligne et sÃ©paration des donnÃ©es
 		line = in.readLine();
 		while(line!=null){
 			String [] ligne = line.split(";");
@@ -413,7 +413,7 @@ public class IOTool {
 					intTemp = Intervenant.getListeIntervenant().get(i);
 				}
 			}
-			//Import des données
+			//Import des donnÃ©es
 			Participation partTemp = new Participation(prjTemp,intTemp,Integer.parseInt(ligne[2]));
 			line = in.readLine();
 		}
@@ -435,12 +435,12 @@ public class IOTool {
 		//Initialisation du lecteur
 		BufferedReader in = new BufferedReader(new FileReader("data/"+path+".csv"));
 
-		//Lecture ligne à ligne et séparation des données
+		//Lecture ligne Ã  ligne et sÃ©paration des donnÃ©es
 		line = in.readLine();
 		while(line!=null){
 			String [] ligne = line.split(";");
 			
-			//Import des données
+			//Import des donnÃ©es
 			Sujet tempSuj = new Sujet(ligne[0],ligne[1],ligne[2],ligne[3],ligne[4]);
 			line = in.readLine();
 		}
@@ -466,13 +466,13 @@ public class IOTool {
 		//Initialisation du lecteur
 		BufferedReader in = new BufferedReader(new FileReader("data/"+path+".csv"));
 
-		//Lecture ligne à ligne et séparation des données
+		//Lecture ligne Ã  ligne et sÃ©paration des donnÃ©es
 
 		line = in.readLine();
 		while(line!=null){
 			String [] ligne = line.split(";");
 
-			//Import des données
+			//Import des donnÃ©es
 
 			for(int i =0; i<Sujet.getListeSujet().size();i++){
 				if(Sujet.getListeSujet().get(i).getID().equals(ligne[1])){
