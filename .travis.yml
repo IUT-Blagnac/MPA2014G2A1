@@ -24,14 +24,11 @@ script:
   - ls -alF
 
 
-
-  - cd sprint_5
-
   - echo "COMPILATION de la librairie"
 
-
-  - javac -cp .;./bin -d ./bin ./src/donnees/Etudiant.java
-  - javac -cp .;./bin;./tools/junit.jar -d ./bin ./src/Tests/*.java
+  
+  - javac -cp .;%BINDIR% -d %BINDIR% %SRCDIR%/donnees/*.java
+  - javac -cp .;%BINDIR%;./tools/junit.jar -d %BINDIR% %SRCDIR%/Tests/*.java
 
   
   - echo "Exécution des Tests"
