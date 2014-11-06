@@ -32,8 +32,9 @@ script:
   - echo "COMPILATION de la librairie"
 
   
-  - javac -cp .;%BINDIR% -d %BINDIR% %SRCDIR%/donnees/*.java
-  - javac -cp .;%BINDIR%;./tools/junit.jar -d %BINDIR% %SRCDIR%/Tests/*.java
+  - javac -cp .;./bin -d %BINDIR% .src/donnees/*.java
+  - javac -cp .;./bin;./tools/junit.jar -d ./bin .src/Tests/*.java
+  
 
   
   - echo "Exécution des Tests"
