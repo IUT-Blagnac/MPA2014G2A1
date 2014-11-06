@@ -30,12 +30,35 @@ script:
 
   - cd sprint_5
 
+  - echo "COMPILATION de l'IHM"
+
+
+  - javac -cp .;./bin -d ./bin ./src/interfacv1/Intervenant.java
+  - javac -cp .;./bin -d ./bin ./src/interfacv1/AssProjet.java
+  - javac -cp .;./bin -d ./bin ./src/interfacv1/SaisieVoeux.java
+  - javac -cp .;./bin -d ./bin ./src/interfacv1/Etudiant.java
+  - javac -cp .;./bin -d ./bin ./src/interfacv1/Projet.java
+  - javac -cp .;./bin -d ./bin ./src/interfacv1/Groupe.java
+  - javac -cp .;./bin -d ./bin ./src/interfacv1/Sujet.java
+  - javac -cp .;./bin -d ./bin ./src/interfacv1/APropos.java
+  - javac -cp .;./bin -d ./bin ./src/interfacv1/InterfaceLog.java
+  - javac -cp .:./bin -d ./bin ./src/HelloMonde.java
+  - javac -cp .:./bin:../junit.jar -d ./bin ./src/HelloMondeTest.java
+
+
   - echo "COMPILATION de la librairie"
 
   
   - javac -cp .;/bin -d /bin .src/donnees/*.java
   - javac -cp .;/bin;/tools/junit.jar -d /bin .src/Tests/*.java
   
+  
+
+
+  - echo "COMPILATION de l'application WEB"
+
+
+  - javac -cp .;./bin -d ./bin ./src/web/MakeOPTIweb.java
 
   
   - echo "Exécution des Tests"
@@ -55,35 +78,11 @@ script:
 
 
 
-  - echo "COMPILATION de l'application WEB"
-
-
-  - javac -cp .;./bin -d ./bin ./src/web/MakeOPTIweb.java
-
-
-
   - echo "Création de la page WEB"
 
 
   - java -cp  .;./bin;./data; web.MakeOPTIweb
 
-
-  - cd sprint_5
-
-  - echo "COMPILATION de l'IHM"
-
-
-  - javac -cp .;./bin -d ./bin ./src/interfacv1/Intervenant.java
-  - javac -cp .;./bin -d ./bin ./src/interfacv1/AssProjet.java
-  - javac -cp .;./bin -d ./bin ./src/interfacv1/SaisieVoeux.java
-  - javac -cp .;./bin -d ./bin ./src/interfacv1/Etudiant.java
-  - javac -cp .;./bin -d ./bin ./src/interfacv1/Projet.java
-  - javac -cp .;./bin -d ./bin ./src/interfacv1/Groupe.java
-  - javac -cp .;./bin -d ./bin ./src/interfacv1/Sujet.java
-  - javac -cp .;./bin -d ./bin ./src/interfacv1/APropos.java
-  - javac -cp .;./bin -d ./bin ./src/interfacv1/InterfaceLog.java
-  - javac -cp .:./bin -d ./bin ./src/HelloMonde.java
-  - javac -cp .:./bin:../junit.jar -d ./bin ./src/HelloMondeTest.java
 
 
   - echo "///////////////////////////////////////////////////////"
