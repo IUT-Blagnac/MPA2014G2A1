@@ -65,14 +65,14 @@ script:
 
 
   - cd /bin
-  - java -cp .:../bin;../tools/junit.jar junit.textui.TestRunner Tests.EtudiantTest
-  - java -cp .:../bin;../tools/junit.jar junit.textui.TestRunner Tests.IntervenantTest
-  - java -cp .:../bin;../tools/junit.jar junit.textui.TestRunner Tests.GroupeTest
-  - java -cp .:../bin;../tools/junit.jar junit.textui.TestRunner Tests.ProjetTest
-  - java -cp .:../bin;../tools/junit.jar junit.textui.TestRunner Tests.ParticipationTest
-  - java -cp .:../bin;../tools/junit.jar junit.textui.TestRunner Tests.SujetTest
+  - java -cp .:../bin:../tools/junit.jar junit.textui.TestRunner Tests.EtudiantTest
+  - java -cp .:../bin:../tools/junit.jar junit.textui.TestRunner Tests.IntervenantTest
+  - java -cp .:../bin:../tools/junit.jar junit.textui.TestRunner Tests.GroupeTest
+  - java -cp .:../bin:../tools/junit.jar junit.textui.TestRunner Tests.ProjetTest
+  - java -cp .:../bin:../tools/junit.jar junit.textui.TestRunner Tests.ParticipationTest
+  - java -cp .:../bin:../tools/junit.jar junit.textui.TestRunner Tests.SujetTest
  
-  - cd sprint_5
+  - cd ..
   
   - java -cp .:./bin;./data;./tools/junit.jar junit.textui.TestRunner Tests.IOToolTest
 
@@ -81,7 +81,7 @@ script:
   - echo "Création de la page WEB"
 
 
-  - java -cp  .:./bin;./data; web.MakeOPTIweb
+  - java -cp  .:./bin:./data web.MakeOPTIweb
 
 
 
@@ -89,7 +89,7 @@ script:
   - echo "// EXECUTION de l'IHM"
   - echo "///////////////////////////////////////////////////////"
 
-  - java -cp  .:./bin;./data; ./src/interfacv1/InterfaceLog
+  - java -cp  .:./bin:./data ./src/interfacv1/InterfaceLog
   - java -jar ../plantuml.jar -Tpng -o srcdoc/images srcdoc/diag0.puml
   - python ../asciidoc-8.6.7/asciidoc.py -a data-uri -o srcdoc/presentationFinale.html srcdoc/presentationFinale.txt
   - ls -alF srcdoc
