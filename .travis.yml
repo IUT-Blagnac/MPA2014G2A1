@@ -1,4 +1,4 @@
-﻿language: java
+language: java
 
 notifications:
   email:
@@ -58,7 +58,7 @@ script:
   - echo "COMPILATION de l'application WEB"
 
 
-  - javac -cp .:./bin -d ./bin ./src/web/MakeOPTIweb.java
+  - javac -cp .:./bin -d ./bin ./src/web/*.java
 
   
   - echo "Exécution des Tests"
