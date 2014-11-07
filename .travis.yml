@@ -76,7 +76,7 @@ script:
   - java -cp .:../bin:../tools/junit.jar junit.textui.TestRunner Tests.ParticipationTest
   - java -cp .:../bin:../tools/junit.jar junit.textui.TestRunner Tests.SujetTest
  
-  - cd ..
+  - cd ../
   
   - java -cp .:./bin:./data:./tools/junit.jar junit.textui.TestRunner Tests.IOToolTest
 
@@ -91,7 +91,7 @@ script:
   - echo "EXECUTION de l'IHM"
 
   
-  - 
+  - ls
   - java -cp  .:./bin:./data ./src/interfacv1/InterfaceLog
   - java -jar ../plantuml.jar -Tpng -o srcdoc/images srcdoc/diag0.puml
   - python ../asciidoc-8.6.7/asciidoc.py -a data-uri -o srcdoc/presentationFinale.html srcdoc/presentationFinale.txt
