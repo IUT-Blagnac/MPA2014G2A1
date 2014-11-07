@@ -289,15 +289,12 @@ link:../OPTIweb/test/OPTIweb.html[OPTI Web]
 
 Ces classes permettent l'affichage des différentes données.
 
-==
 - APropos
 Permets de créer et d'afficher le JDialog gérant le A Propos
 
-==
 - Interfacelog
 Gère l'affichage principal et notamment le menu de l'application
 
-==
 *Site web*
 
 
