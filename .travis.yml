@@ -68,7 +68,7 @@ script:
   - echo "Exécution des Tests"
 
 
-  - cd /bin
+  - cd bin
   - java -cp .:../bin:../tools/junit.jar junit.textui.TestRunner Tests.EtudiantTest
   - java -cp .:../bin:../tools/junit.jar junit.textui.TestRunner Tests.IntervenantTest
   - java -cp .:../bin:../tools/junit.jar junit.textui.TestRunner Tests.GroupeTest
@@ -88,11 +88,10 @@ script:
   - java -cp  .:./bin:./data web.MakeOPTIweb
 
 
+  - echo "EXECUTION de l'IHM"
 
-  - echo "///////////////////////////////////////////////////////"
-  - echo "// EXECUTION de l'IHM"
-  - echo "///////////////////////////////////////////////////////"
-
+  
+  - 
   - java -cp  .:./bin:./data ./src/interfacv1/InterfaceLog
   - java -jar ../plantuml.jar -Tpng -o srcdoc/images srcdoc/diag0.puml
   - python ../asciidoc-8.6.7/asciidoc.py -a data-uri -o srcdoc/presentationFinale.html srcdoc/presentationFinale.txt
