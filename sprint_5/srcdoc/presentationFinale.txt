@@ -317,7 +317,9 @@ link:../doc/index.html[Java DOC]
 
 - Pour chaque séance nous avons mis 30 minutes pour nous préparer : préparation du matèriel, répartition des tâches...
 - A raison d'une heure de travail par séance avec en plus un suplément de deux heures trentes pour quatres d'entre nous,
-Nous avons effectuer 180 H de travail, au prix du smic horaire, soit : 1715,4 €
+Nous avons effectuer 186,5 H de travail, au prix du smic horaire, soit : 5595,00 €
+
+image::tableau_des_couts.png[]
 
 == Bilan humain du projet 
 
