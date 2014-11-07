@@ -3,8 +3,8 @@
 :doctitle: Présentation finale de recette OPTI 
 :slideshowlocation: Your computer
 :copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by AsciiDoc and W3C Slidy &#169; 
-:revnumber: 5
-:incremental:
+:revnumber: 6
+:incremental!:
 
 include::docConf.txt[]
 
@@ -19,7 +19,7 @@ include::docConf.txt[]
 - L'application web va se créer
 - L'interface graphique va se lancer
 
-*Fonctionnalités de l'application*
+== Fonctionnalités de l'application
 
 [NOTE]
 ====
@@ -29,15 +29,19 @@ Fichier permettant de sauvegarder en .csv
 - Le fichier IOTool.java permet à l'application de lire ainsi que de sauvegarder des fichiers au format .csv
 - les fichiers : Groupe.java , Individu.java , Sujet.java sont des fichiers qui contiennent la base de donnée
  
-*Interface graphique*
+== Interface graphique 1)
 
 - Page d'acceuil de l'interface avec un message de bienvenue pour un meilleur visuel
 
 image::Acceuil.png[]
 
+== Interface graphique 2)
+
 - Actuellement l'interface possède un onglet Aide dans lequel se trouve toutes les informations relatives à la création de l'application.
 
 image::aide.png[]
+
+== Interface graphique 3)
 
 .Afficher 
 
@@ -107,6 +111,10 @@ Une fois générée, le site web va vous permettre de :
 - Lier les données entre elles.
 
 link:../OPTIweb/test/OPTIweb.html[OPTI Web]
+
+== Crédit Web
+
+image::CreditsWeb.PNG[]
 
 == Bilan technique du projet
 
@@ -281,14 +289,15 @@ link:../OPTIweb/test/OPTIweb.html[OPTI Web]
 
 Ces classes permettent l'affichage des différentes données.
 
-
+==
 - APropos
 Permets de créer et d'afficher le JDialog gérant le A Propos
 
+==
 - Interfacelog
 Gère l'affichage principal et notamment le menu de l'application
 
-
+==
 *Site web*
 
 
