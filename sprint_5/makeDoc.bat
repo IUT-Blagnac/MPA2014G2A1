@@ -11,6 +11,7 @@ set PYTHONDIR=c:\Python27\
 set MAKETEST=1
 set docUtil=docUtilisateurSprint4
 set docTech=docTechniqueSprint4
+set presentation=presentationFinale
 
 
 @echo ///////////////////////////////////////////////////////
@@ -19,4 +20,5 @@ set docTech=docTechniqueSprint4
 
 %PYTHONDIR%python %ASCIIDOCDIR%asciidoc.py -a source-highlighter=pygments -a iconsdir=../%ASCIIDOCDIR%/images/icons -o %SRCDOCDIR%%docUtil%.html %SRCDOCDIR%%docUtil%.txt
 %PYTHONDIR%python %ASCIIDOCDIR%asciidoc.py -a source-highlighter=pygments -a iconsdir=../%ASCIIDOCDIR%/images/icons -o %SRCDOCDIR%%docTech%.html %SRCDOCDIR%%docTech%.txt
+%PYTHONDIR%python %ASCIIDOCDIR%asciidoc.py -b slidy -a source-highlighter=pygments -a iconsdir=../%ASCIIDOCDIR%/images/icons -o %SRCDOCDIR%%presentation%.html %SRCDOCDIR%%presentation%.txt
 pause
